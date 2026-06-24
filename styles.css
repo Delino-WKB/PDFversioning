@@ -23,14 +23,14 @@
 }
 
 .pdf-versioning-popup-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     padding: 6px 12px;
     font-weight: bold;
     font-size: 0.85em;
     color: var(--text-muted);
     border-bottom: 1px solid var(--background-modifier-border);
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
     margin-bottom: 4px;
 }
 
@@ -110,6 +110,8 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    flex-shrink: 0;
+    margin-left: 8px;
 }
 
 .pdf-versioning-popup-check {
@@ -147,6 +149,10 @@
     transition: transform 0.2s ease;
 }
 
+.pdf-versioning-settings-chevron.is-expanded {
+    transform: rotate(90deg);
+}
+
 .pdf-versioning-settings-title {
     flex-grow: 1;
 }
@@ -162,6 +168,10 @@
     margin-top: 12px;
     border-top: 1px solid var(--background-modifier-border);
     padding-top: 8px;
+}
+
+.pdf-versioning-settings-list-container.is-expanded {
+    display: block;
 }
 
 .pdf-versioning-settings-item {
