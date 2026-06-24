@@ -502,17 +502,16 @@ export default class PDFVersioningPlugin extends Plugin {
     }
 
     async findAffectedNotes(fileToDelete: TFile): Promise<TFile[]> {
-        const markdownFiles = this.app.vault.getMarkdownFiles();
         const affected: TFile[] = [];
+        const targetPath = fileToDelete.path;
+        const resolvedLinks = this.app.metadataCache.resolvedLinks;
         
-        const escName = fileToDelete.name.replace(/[-/\\^$*+?.()|[\]{}]/g, '\\$&');
-        const escPath = fileToDelete.path.replace(/[-/\\^$*+?.()|[\]{}]/g, '\\$&');
-        const regex = new RegExp(`(!)?\\[\\[(${escName}|${escPath})(#.*?)?(\\|.*?)?\\]\\]`, 'g');
-        
-        for (const mdFile of markdownFiles) {
-            const content = await this.app.vault.read(mdFile);
-            if (regex.test(content)) {
-                affected.push(mdFile);
+        for (const sourcePath in resolvedLinks) {
+            if (resolvedLinks[sourcePath][targetPath]) {
+                const sourceFile = this.app.vault.getAbstractFileByPath(sourcePath);
+                if (sourceFile && sourceFile.instanceOf(TFile) && sourceFile.extension === 'md') {
+                    affected.push(sourceFile);
+                }
             }
         }
         return affected;
