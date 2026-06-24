@@ -1,0 +1,10 @@
+{
+  "id": "pdf-versioning",
+  "name": "PDF versioning",
+  "version": "0.0.1",
+  "minAppVersion": "0.15.0",
+  "description": "Integration with external tools for PDF annotations and embedded views with full versioning support.",
+  "author": "Andrea Salomone",
+  "authorUrl": "https://github.com/Delino-WKB",
+  "isDesktopOnly": false
+}

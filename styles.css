@@ -1,0 +1,98 @@
+/* Styles for PDF versioning Plugin */
+
+.pdf-versioning-toolbar-button {
+    /* Style matching Obsidian's native buttons */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Custom dropdown popup menu styles */
+.pdf-versioning-popup {
+    position: fixed;
+    z-index: 10000;
+    min-width: 240px;
+    max-height: 400px;
+    overflow-y: auto;
+    background-color: var(--background-primary);
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    padding: 4px 0;
+    font-family: var(--font-interface);
+}
+
+.pdf-versioning-popup-header {
+    padding: 6px 12px;
+    font-weight: bold;
+    font-size: 0.85em;
+    color: var(--text-muted);
+    border-bottom: 1px solid var(--background-modifier-border);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 4px;
+}
+
+.pdf-versioning-popup-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6px 12px;
+    cursor: pointer;
+    font-size: 0.9em;
+    gap: 8px;
+}
+
+.pdf-versioning-popup-item:hover {
+    background-color: var(--background-modifier-hover);
+}
+
+.pdf-versioning-popup-item-title {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-normal);
+}
+
+.pdf-versioning-popup-item-title.active {
+    font-weight: bold;
+    color: var(--text-accent);
+}
+
+.pdf-versioning-popup-item-delete {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+    border-radius: 4px;
+    color: var(--text-error);
+    opacity: 0.6;
+    cursor: pointer;
+    transition: opacity 0.15s, background-color 0.15s;
+}
+
+.pdf-versioning-popup-item-delete:hover {
+    opacity: 1;
+    background-color: var(--background-modifier-error-hover);
+}
+
+.pdf-versioning-popup-item.active {
+    background-color: var(--background-secondary);
+    border-radius: 4px;
+    margin: 0 4px;
+}
+
+.pdf-versioning-popup-item.active .pdf-versioning-popup-item-title {
+    font-weight: bold;
+    color: var(--text-normal);
+}
+
+.pdf-versioning-popup-item.active:hover {
+    background-color: var(--background-secondary-alt);
+}
+
+.pdf-versioning-settings-group[open] .pdf-versioning-settings-chevron {
+    transform: rotate(90deg);
+}

@@ -1,0 +1,25 @@
+{
+  "name": "pdf-versioning",
+  "version": "0.0.1",
+  "description": "Integration with external tools for PDF annotations and embedded views with full versioning support.",
+  "main": "main.js",
+  "scripts": {
+    "dev": "node esbuild.config.mjs",
+    "build": "node esbuild.config.mjs production"
+  },
+  "keywords": [
+    "obsidian",
+    "plugin",
+    "pdf",
+    "versioning"
+  ],
+  "author": "Andrea Salomone",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^16.18.126",
+    "esbuild": "^0.14.47",
+    "obsidian": "^0.15.0",
+    "tslib": "^2.4.0",
+    "typescript": "^4.7.4"
+  }
+}
