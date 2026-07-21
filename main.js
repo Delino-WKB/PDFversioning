@@ -1634,7 +1634,8 @@ var PDFVersioningPlugin = class extends import_obsidian.Plugin {
     const existingLayers = toolbar.querySelector(".pdf-versioning-layers-button");
     const existingCollapse = toolbar.querySelector(".pdf-versioning-collapse-button");
     const existingTitle = toolbar.querySelector(".pdf-versioning-title-label");
-    if (toolbar.getAttribute("data-pdf-versioning-file-path") === file.path && existingPencil && existingLayers && existingCollapse && existingTitle) {
+    const existingZoom = toolbar.querySelector(".pdf-versioning-zoom-button");
+    if (toolbar.getAttribute("data-pdf-versioning-file-path") === file.path && existingPencil && existingLayers && existingCollapse && existingTitle && existingZoom) {
       return;
     }
     if (existingPencil)
@@ -1645,6 +1646,8 @@ var PDFVersioningPlugin = class extends import_obsidian.Plugin {
       existingCollapse.remove();
     if (existingTitle)
       existingTitle.remove();
+    if (existingZoom)
+      existingZoom.remove();
     toolbar.setAttribute("data-pdf-versioning-file-path", file.path);
     const getTargetEl = () => {
       if (pdfEmbed)
@@ -1661,11 +1664,50 @@ var PDFVersioningPlugin = class extends import_obsidian.Plugin {
     titleLabel.classList.add("pdf-versioning-toolbar-title", "pdf-versioning-title-label");
     titleLabel.textContent = file.name;
     titleLabel.setAttribute("title", file.path);
+    const zoomButton = activeDocument.createElement("button");
+    zoomButton.classList.add("clickable-icon", "pdf-toolbar-button", "pdf-versioning-toolbar-button", "pdf-versioning-zoom-button");
+    zoomButton.setAttribute("aria-label", "Zoom e Opzioni di visualizzazione");
+    (0, import_obsidian.setIcon)(zoomButton, "search");
+    zoomButton.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const rect = zoomButton.getBoundingClientRect();
+      const menu = new import_obsidian.Menu();
+      menu.addItem((item) => {
+        item.setTitle("Zoom In (+)").setIcon("zoom-in").onClick(() => {
+          const btn = toolbar.querySelector('button[aria-label*="Zoom in"], button[aria-label*="Ingrandisci"], button:has(svg.lucide-zoom-in), button:has(svg.lucide-plus)');
+          if (btn)
+            btn.click();
+        });
+      });
+      menu.addItem((item) => {
+        item.setTitle("Zoom Out (-)").setIcon("zoom-out").onClick(() => {
+          const btn = toolbar.querySelector('button[aria-label*="Zoom out"], button[aria-label*="Rimpicciolisci"], button:has(svg.lucide-zoom-out), button:has(svg.lucide-minus)');
+          if (btn)
+            btn.click();
+        });
+      });
+      menu.addSeparator();
+      menu.addItem((item) => {
+        item.setTitle("Opzioni di layout e vista...").setIcon("layout").onClick(() => {
+          const viewBtn = toolbar.querySelector('.pdf-toolbar-view-menu, .pdf-toolbar-scale-select, button[aria-label*="Page layout"], button[aria-label*="Layout"], button[aria-label*="View"], button[aria-label*="Opzioni"]');
+          if (viewBtn) {
+            viewBtn.click();
+          }
+        });
+      });
+      menu.showAtPosition({ x: rect.left, y: rect.bottom + 4 });
+    });
     const toolbarLeft = toolbar.querySelector(".pdf-toolbar-left");
     if (toolbarLeft) {
       toolbarLeft.insertBefore(titleLabel, toolbarLeft.firstChild);
+      if (titleLabel.nextSibling) {
+        toolbarLeft.insertBefore(zoomButton, titleLabel.nextSibling);
+      } else {
+        toolbarLeft.appendChild(zoomButton);
+      }
     } else {
       toolbar.insertBefore(titleLabel, toolbar.firstChild);
+      toolbar.insertBefore(zoomButton, titleLabel.nextSibling);
     }
     let isCollapsed = false;
     const collapseButton = activeDocument.createElement("button");
