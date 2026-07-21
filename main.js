@@ -2282,7 +2282,10 @@ var PDFVersioningSettingTab = class extends import_obsidian.PluginSettingTab {
         const btnContainer = itemEl.createDiv({ cls: "pdf-versioning-settings-item-btns" });
         const previewBtn = btnContainer.createEl("button", { text: this.plugin.t("previewBtn"), cls: "pdf-versioning-settings-item-btn" });
         previewBtn.addEventListener("click", () => {
-          new PDFPreviewModal(this.app, variant, this.plugin).open();
+          const leaf = this.app.workspace.getLeaf("tab");
+          if (leaf) {
+            void leaf.openFile(variant);
+          }
         });
         const keepBtn = btnContainer.createEl("button", { text: this.plugin.t("keepOnlyThis"), cls: "mod-cta pdf-versioning-settings-item-btn" });
         keepBtn.addEventListener("click", () => {
@@ -2306,36 +2309,6 @@ var PDFVersioningSettingTab = class extends import_obsidian.PluginSettingTab {
         });
       });
     });
-  }
-};
-var PDFPreviewModal = class extends import_obsidian.Modal {
-  constructor(app, file, plugin) {
-    super(app);
-    this.file = file;
-    this.plugin = plugin;
-    this.component = new import_obsidian.Component();
-  }
-  onOpen() {
-    const { contentEl, titleEl } = this;
-    contentEl.empty();
-    titleEl.setText(this.plugin.t("previewTitle", this.file.name));
-    this.modalEl.addClass("pdf-versioning-preview-modal");
-    contentEl.addClass("pdf-versioning-preview-content");
-    const previewContainer = contentEl.createDiv({ cls: "pdf-versioning-preview-container" });
-    this.component.load();
-    const resourcePath = this.app.vault.getResourcePath(this.file);
-    previewContainer.createEl("iframe", {
-      cls: "pdf-versioning-preview-embed",
-      attr: {
-        src: resourcePath,
-        frameborder: "0"
-      }
-    });
-  }
-  onClose() {
-    this.component.unload();
-    const { contentEl } = this;
-    contentEl.empty();
   }
 };
 var ConfirmationModal = class extends import_obsidian.Modal {

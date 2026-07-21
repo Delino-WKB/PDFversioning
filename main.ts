@@ -957,7 +957,10 @@ class PDFVersioningSettingTab extends PluginSettingTab {
                 // Preview button
                 const previewBtn = btnContainer.createEl('button', { text: this.plugin.t('previewBtn'), cls: 'pdf-versioning-settings-item-btn' });
                 previewBtn.addEventListener('click', () => {
-                    new PDFPreviewModal(this.app, variant, this.plugin).open();
+                    const leaf = this.app.workspace.getLeaf('tab');
+                    if (leaf) {
+                        void leaf.openFile(variant);
+                    }
                 });
 
                 // Keep button (Tieni solo questa nota e cancella le altre)
@@ -985,47 +988,6 @@ class PDFVersioningSettingTab extends PluginSettingTab {
                 });
             });
         });
-    }
-}
-
-class PDFPreviewModal extends Modal {
-    file: TFile;
-    plugin: PDFVersioningPlugin;
-    component: Component;
-
-    constructor(app: App, file: TFile, plugin: PDFVersioningPlugin) {
-        super(app);
-        this.file = file;
-        this.plugin = plugin;
-        this.component = new Component();
-    }
-
-    onOpen() {
-        const { contentEl, titleEl } = this;
-        contentEl.empty();
-        titleEl.setText(this.plugin.t('previewTitle', this.file.name));
-
-        this.modalEl.addClass('pdf-versioning-preview-modal');
-        contentEl.addClass('pdf-versioning-preview-content');
-
-        const previewContainer = contentEl.createDiv({ cls: 'pdf-versioning-preview-container' });
-
-        this.component.load();
-
-        const resourcePath = this.app.vault.getResourcePath(this.file);
-        previewContainer.createEl('iframe', {
-            cls: 'pdf-versioning-preview-embed',
-            attr: {
-                src: resourcePath,
-                frameborder: '0'
-            }
-        });
-    }
-
-    onClose() {
-        this.component.unload();
-        const { contentEl } = this;
-        contentEl.empty();
     }
 }
 
