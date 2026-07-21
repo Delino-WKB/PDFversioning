@@ -197,8 +197,8 @@
 }
 
 .pdf-versioning-preview-modal {
-    width: 80vw !important;
-    height: 80vh !important;
+    width: 85vw !important;
+    height: 85vh !important;
     max-width: 900px !important;
     max-height: 800px !important;
     display: flex !important;
@@ -207,34 +207,49 @@
 }
 
 .pdf-versioning-preview-content {
-    flex: 1 1 auto !important;
+    flex: 1 1 0% !important;
     height: 100% !important;
-    padding: 12px !important;
+    min-height: 0 !important;
+    padding: 8px 12px 12px 12px !important;
     display: flex !important;
     flex-direction: column !important;
     overflow: hidden !important;
 }
 
 .pdf-versioning-preview-container {
-    flex: 1 1 auto !important;
+    flex: 1 1 0% !important;
     width: 100% !important;
     height: 100% !important;
-    overflow: hidden !important;
+    min-height: 0 !important;
     display: flex !important;
     flex-direction: column !important;
+    overflow: hidden !important;
 }
 
+.pdf-versioning-preview-container .internal-embed,
+.pdf-versioning-preview-container .pdf-embed,
 .pdf-versioning-preview-embed {
-    flex: 1 1 auto !important;
+    flex: 1 1 0% !important;
     width: 100% !important;
     height: 100% !important;
+    min-height: 0 !important;
     max-height: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
     overflow: hidden !important;
     border: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
-.pdf-versioning-preview-embed .pdf-container {
+.pdf-versioning-preview-container .pdf-container,
+.pdf-versioning-preview-container .pdf-viewer-container,
+.pdf-versioning-preview-container .pdf-viewer {
+    flex: 1 1 0% !important;
+    width: 100% !important;
     height: 100% !important;
+    min-height: 0 !important;
+    max-height: 100% !important;
 }
 
 .pdf-versioning-confirm-btns {
