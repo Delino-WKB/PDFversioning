@@ -2323,14 +2323,14 @@ var PDFPreviewModal = class extends import_obsidian.Modal {
     contentEl.addClass("pdf-versioning-preview-content");
     const previewContainer = contentEl.createDiv({ cls: "pdf-versioning-preview-container" });
     this.component.load();
-    const markdown = `![[${this.file.path}]]`;
-    void (async () => {
-      await import_obsidian.MarkdownRenderer.render(this.app, markdown, previewContainer, "", this.component);
-      const embed = previewContainer.querySelector(".internal-embed");
-      if (embed instanceof HTMLElement) {
-        embed.addClass("pdf-versioning-preview-embed");
+    const resourcePath = this.app.vault.getResourcePath(this.file);
+    previewContainer.createEl("iframe", {
+      cls: "pdf-versioning-preview-embed",
+      attr: {
+        src: resourcePath,
+        frameborder: "0"
       }
-    })();
+    });
   }
   onClose() {
     this.component.unload();

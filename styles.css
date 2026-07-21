@@ -200,56 +200,41 @@
     width: 85vw !important;
     height: 85vh !important;
     max-width: 900px !important;
-    max-height: 800px !important;
-    display: flex !important;
-    flex-direction: column !important;
-    overflow: hidden !important;
+    max-height: 750px !important;
 }
 
 .pdf-versioning-preview-content {
-    flex: 1 1 0% !important;
-    height: 100% !important;
-    min-height: 0 !important;
-    padding: 8px 12px 12px 12px !important;
-    display: flex !important;
-    flex-direction: column !important;
+    height: calc(100% - 40px) !important;
+    padding: 12px !important;
+    box-sizing: border-box !important;
     overflow: hidden !important;
+    position: relative !important;
 }
 
 .pdf-versioning-preview-container {
-    flex: 1 1 0% !important;
     width: 100% !important;
     height: 100% !important;
-    min-height: 0 !important;
-    display: flex !important;
-    flex-direction: column !important;
+    min-height: 350px !important;
     overflow: hidden !important;
+    position: relative !important;
 }
 
 .pdf-versioning-preview-container .internal-embed,
 .pdf-versioning-preview-container .pdf-embed,
-.pdf-versioning-preview-embed {
-    flex: 1 1 0% !important;
+.pdf-versioning-preview-embed,
+.pdf-versioning-preview-container iframe {
     width: 100% !important;
     height: 100% !important;
-    min-height: 0 !important;
-    max-height: 100% !important;
-    display: flex !important;
-    flex-direction: column !important;
-    overflow: hidden !important;
+    min-height: 350px !important;
+    display: block !important;
     border: none !important;
     margin: 0 !important;
     padding: 0 !important;
-}
-
-.pdf-versioning-preview-container .pdf-container,
-.pdf-versioning-preview-container .pdf-viewer-container,
-.pdf-versioning-preview-container .pdf-viewer {
-    flex: 1 1 0% !important;
-    width: 100% !important;
-    height: 100% !important;
-    min-height: 0 !important;
-    max-height: 100% !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
 }
 
 .pdf-versioning-confirm-btns {

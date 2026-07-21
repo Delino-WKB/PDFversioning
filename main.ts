@@ -1012,14 +1012,14 @@ class PDFPreviewModal extends Modal {
 
         this.component.load();
 
-        const markdown = `![[${this.file.path}]]`;
-        void (async () => {
-            await MarkdownRenderer.render(this.app, markdown, previewContainer, '', this.component);
-            const embed = previewContainer.querySelector('.internal-embed');
-            if (embed instanceof HTMLElement) {
-                embed.addClass('pdf-versioning-preview-embed');
+        const resourcePath = this.app.vault.getResourcePath(this.file);
+        previewContainer.createEl('iframe', {
+            cls: 'pdf-versioning-preview-embed',
+            attr: {
+                src: resourcePath,
+                frameborder: '0'
             }
-        })();
+        });
     }
 
     onClose() {
