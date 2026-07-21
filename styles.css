@@ -232,19 +232,38 @@
     justify-content: flex-end;
 }
 
-/* Toolbar title label and collapsed state */
+/* Toolbar title label (distinct pill badge on far left) */
 .pdf-versioning-toolbar-title {
+    display: inline-flex;
+    align-items: center;
     font-weight: 600;
-    font-size: 0.85em;
-    color: var(--text-muted);
-    margin-right: 8px;
+    font-size: 0.78em;
+    color: var(--text-normal);
+    background-color: var(--background-secondary-alt);
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 12px;
+    padding: 2px 8px;
+    margin: 0 8px 0 2px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    max-width: 180px;
-    display: inline-block;
+    max-width: 140px;
     vertical-align: middle;
     align-self: center;
+    flex-shrink: 0;
+}
+
+/* Prevent toolbar right buttons from overlapping with Obsidian's native </> embed edit button */
+.internal-embed .pdf-toolbar .pdf-toolbar-right,
+.pdf-embed .pdf-toolbar .pdf-toolbar-right {
+    margin-right: 28px !important;
+}
+
+/* Hide unwanted overflow 3-dots button inside pdf-toolbar */
+.pdf-toolbar button[aria-label*="More"],
+.pdf-toolbar button[aria-label*="Altro"],
+.pdf-toolbar .pdf-toolbar-overflow-button {
+    display: none !important;
 }
 
 .internal-embed.pdf-versioning-collapsed,

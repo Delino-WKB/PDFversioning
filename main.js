@@ -1661,6 +1661,12 @@ var PDFVersioningPlugin = class extends import_obsidian.Plugin {
     titleLabel.classList.add("pdf-versioning-toolbar-title", "pdf-versioning-title-label");
     titleLabel.textContent = file.name;
     titleLabel.setAttribute("title", file.path);
+    const toolbarLeft = toolbar.querySelector(".pdf-toolbar-left");
+    if (toolbarLeft) {
+      toolbarLeft.insertBefore(titleLabel, toolbarLeft.firstChild);
+    } else {
+      toolbar.insertBefore(titleLabel, toolbar.firstChild);
+    }
     let isCollapsed = false;
     const collapseButton = activeDocument.createElement("button");
     collapseButton.classList.add("clickable-icon", "pdf-toolbar-button", "pdf-versioning-toolbar-button", "pdf-versioning-collapse-button");
@@ -1728,12 +1734,10 @@ var PDFVersioningPlugin = class extends import_obsidian.Plugin {
         target = children[0];
       }
       if (target) {
-        toolbarRight.insertBefore(titleLabel, target);
         toolbarRight.insertBefore(collapseButton, target);
         toolbarRight.insertBefore(layersButton, target);
         toolbarRight.insertBefore(pencilButton, target);
       } else {
-        toolbarRight.appendChild(titleLabel);
         toolbarRight.appendChild(collapseButton);
         toolbarRight.appendChild(layersButton);
         toolbarRight.appendChild(pencilButton);
@@ -1741,7 +1745,6 @@ var PDFVersioningPlugin = class extends import_obsidian.Plugin {
     } else {
       const toolbarActions = toolbar.querySelector(".pdf-toolbar-actions");
       const targetContainer = toolbarActions || toolbar;
-      targetContainer.appendChild(titleLabel);
       targetContainer.appendChild(collapseButton);
       targetContainer.appendChild(layersButton);
       targetContainer.appendChild(pencilButton);

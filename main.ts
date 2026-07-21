@@ -172,11 +172,18 @@ export default class PDFVersioningPlugin extends Plugin {
             return toolbar.parentElement;
         };
 
-        // 1. Create Title Label
+        // 1. Create Title Label Pill (placed on far left)
         const titleLabel = activeDocument.createElement('span');
         titleLabel.classList.add('pdf-versioning-toolbar-title', 'pdf-versioning-title-label');
         titleLabel.textContent = file.name;
         titleLabel.setAttribute('title', file.path);
+
+        const toolbarLeft = toolbar.querySelector('.pdf-toolbar-left');
+        if (toolbarLeft) {
+            toolbarLeft.insertBefore(titleLabel, toolbarLeft.firstChild);
+        } else {
+            toolbar.insertBefore(titleLabel, toolbar.firstChild);
+        }
 
         // 2. Create Collapse Button
         let isCollapsed = false;
@@ -245,7 +252,7 @@ export default class PDFVersioningPlugin extends Plugin {
             }
         });
 
-        // Place in order: [Title] [Collapse] [Layers] [Pencil]
+        // Place custom buttons in order: [Collapse] [Layers] [Pencil]
         const toolbarRight = toolbar.querySelector('.pdf-toolbar-right');
         if (toolbarRight) {
             const children = Array.from(toolbarRight.children);
@@ -257,12 +264,10 @@ export default class PDFVersioningPlugin extends Plugin {
             }
 
             if (target) {
-                toolbarRight.insertBefore(titleLabel, target);
                 toolbarRight.insertBefore(collapseButton, target);
                 toolbarRight.insertBefore(layersButton, target);
                 toolbarRight.insertBefore(pencilButton, target);
             } else {
-                toolbarRight.appendChild(titleLabel);
                 toolbarRight.appendChild(collapseButton);
                 toolbarRight.appendChild(layersButton);
                 toolbarRight.appendChild(pencilButton);
@@ -270,7 +275,6 @@ export default class PDFVersioningPlugin extends Plugin {
         } else {
             const toolbarActions = toolbar.querySelector('.pdf-toolbar-actions');
             const targetContainer = toolbarActions || toolbar;
-            targetContainer.appendChild(titleLabel);
             targetContainer.appendChild(collapseButton);
             targetContainer.appendChild(layersButton);
             targetContainer.appendChild(pencilButton);
