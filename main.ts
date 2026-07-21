@@ -1,5 +1,6 @@
 import { Plugin, setIcon, Notice, TFile, normalizePath, PluginSettingTab, Setting, WorkspaceLeaf, App, Modal, MarkdownRenderer, Component, FileView } from 'obsidian';
 import { getLocale, LocaleKey } from './locales';
+import { TUTORIAL_ASSETS } from './tutorialAssets';
 
 export interface PDFVersioningSettings {
     language: string;
@@ -658,14 +659,19 @@ export default class PDFVersioningPlugin extends Plugin {
             console.error('Failed to create folders', e);
         }
 
-        const pluginPath = `${this.app.vault.configDir}/plugins/pdf-versioning`;
         for (const assetName of assets) {
-            const srcPath = `${pluginPath}/assets/${assetName}`;
             const destPath = `${attachmentsFolder}/${assetName}`;
             try {
-                if (await adapter.exists(srcPath)) {
-                    const data = await adapter.readBinary(srcPath);
-                    await adapter.writeBinary(destPath, data);
+                if (TUTORIAL_ASSETS[assetName]) {
+                    const buffer = base64ToArrayBuffer(TUTORIAL_ASSETS[assetName]);
+                    await adapter.writeBinary(destPath, buffer);
+                } else {
+                    const pluginPath = `${this.app.vault.configDir}/plugins/pdf-versioning`;
+                    const srcPath = `${pluginPath}/assets/${assetName}`;
+                    if (await adapter.exists(srcPath)) {
+                        const data = await adapter.readBinary(srcPath);
+                        await adapter.writeBinary(destPath, data);
+                    }
                 }
             } catch (err) {
                 console.error(`Failed to copy asset ${assetName}`, err);
@@ -1187,4 +1193,14 @@ class TutorialCreatedModal extends Modal {
         const { contentEl } = this;
         contentEl.empty();
     }
+}
+
+function base64ToArrayBuffer(base64: string): ArrayBuffer {
+    const binaryString = window.atob(base64);
+    const len = binaryString.length;
+    const bytes = new Uint8Array(len);
+    for (let i = 0; i < len; i++) {
+        bytes[i] = binaryString.charCodeAt(i);
+    }
+    return bytes.buffer;
 }
