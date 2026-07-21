@@ -282,15 +282,3 @@
     display: none !important;
 }
 
-/* Hide native PDF toolbar zoom and view buttons, replacing them with single magnifying glass menu */
-.pdf-toolbar button[aria-label*="Zoom in"],
-.pdf-toolbar button[aria-label*="Zoom out"],
-.pdf-toolbar button[aria-label*="Ingrandisci"],
-.pdf-toolbar button[aria-label*="Rimpicciolisci"],
-.pdf-toolbar button[aria-label*="Page layout"],
-.pdf-toolbar button[aria-label*="Layout pagina"],
-.pdf-toolbar .pdf-toolbar-view-menu,
-.pdf-toolbar .pdf-toolbar-scale-select {
-    display: none !important;
-}
-
