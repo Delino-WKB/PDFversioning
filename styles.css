@@ -232,3 +232,34 @@
     justify-content: flex-end;
 }
 
+/* Toolbar title label and collapsed state */
+.pdf-versioning-toolbar-title {
+    font-weight: 600;
+    font-size: 0.85em;
+    color: var(--text-muted);
+    margin-right: 8px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 180px;
+    display: inline-block;
+    vertical-align: middle;
+    align-self: center;
+}
+
+.internal-embed.pdf-versioning-collapsed,
+.pdf-embed.pdf-versioning-collapsed {
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: fit-content !important;
+}
+
+.internal-embed.pdf-versioning-collapsed > :not(.pdf-toolbar),
+.pdf-embed.pdf-versioning-collapsed > :not(.pdf-toolbar),
+.pdf-view.pdf-versioning-collapsed > :not(.pdf-toolbar),
+.view-content.pdf-versioning-collapsed > :not(.pdf-toolbar),
+.pdf-container.pdf-versioning-collapsed > :not(.pdf-toolbar),
+.workspace-leaf.pdf-versioning-collapsed .view-content > :not(.pdf-toolbar) {
+    display: none !important;
+}
+

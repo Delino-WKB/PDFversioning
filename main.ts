@@ -150,15 +150,62 @@ export default class PDFVersioningPlugin extends Plugin {
     injectButtons(toolbar: HTMLElement, file: TFile, pdfEmbed: HTMLElement | null, leaf: WorkspaceLeaf | null) {
         const existingPencil = toolbar.querySelector('.pdf-versioning-pencil-button');
         const existingLayers = toolbar.querySelector('.pdf-versioning-layers-button');
-        if (toolbar.getAttribute('data-pdf-versioning-file-path') === file.path && existingPencil && existingLayers) {
+        const existingCollapse = toolbar.querySelector('.pdf-versioning-collapse-button');
+        const existingTitle = toolbar.querySelector('.pdf-versioning-title-label');
+
+        if (toolbar.getAttribute('data-pdf-versioning-file-path') === file.path && existingPencil && existingLayers && existingCollapse && existingTitle) {
             return;
         }
 
         if (existingPencil) existingPencil.remove();
         if (existingLayers) existingLayers.remove();
+        if (existingCollapse) existingCollapse.remove();
+        if (existingTitle) existingTitle.remove();
+
         toolbar.setAttribute('data-pdf-versioning-file-path', file.path);
 
-        // Create Pencil Button
+        const getTargetEl = (): HTMLElement | null => {
+            if (pdfEmbed) return pdfEmbed;
+            if (toolbar.closest('.internal-embed')) return toolbar.closest('.internal-embed') as HTMLElement;
+            if (toolbar.closest('.pdf-embed')) return toolbar.closest('.pdf-embed') as HTMLElement;
+            if (leaf && (leaf.view as FileView).containerEl) return (leaf.view as FileView).containerEl;
+            return toolbar.parentElement;
+        };
+
+        // 1. Create Title Label
+        const titleLabel = activeDocument.createElement('span');
+        titleLabel.classList.add('pdf-versioning-toolbar-title', 'pdf-versioning-title-label');
+        titleLabel.textContent = file.name;
+        titleLabel.setAttribute('title', file.path);
+
+        // 2. Create Collapse Button
+        let isCollapsed = false;
+        const collapseButton = activeDocument.createElement('button');
+        collapseButton.classList.add('clickable-icon', 'pdf-toolbar-button', 'pdf-versioning-toolbar-button', 'pdf-versioning-collapse-button');
+        collapseButton.setAttribute('aria-label', 'Collassa/Espandi PDF');
+        setIcon(collapseButton, 'chevron-up');
+        collapseButton.addEventListener('click', (e) => {
+            e.stopPropagation();
+            isCollapsed = !isCollapsed;
+            const targetEl = getTargetEl();
+            if (targetEl) {
+                targetEl.classList.toggle('pdf-versioning-collapsed', isCollapsed);
+            }
+            setIcon(collapseButton, isCollapsed ? 'chevron-down' : 'chevron-up');
+            collapseButton.setAttribute('aria-label', isCollapsed ? 'Espandi PDF' : 'Collassa PDF');
+        });
+
+        // 3. Create Layers Button
+        const layersButton = activeDocument.createElement('button');
+        layersButton.classList.add('clickable-icon', 'pdf-toolbar-button', 'pdf-versioning-toolbar-button', 'pdf-versioning-layers-button');
+        layersButton.setAttribute('aria-label', 'Mostra varianti PDF');
+        setIcon(layersButton, 'layers');
+        layersButton.addEventListener('click', (e) => {
+            e.stopPropagation();
+            void this.showVariantsPopup(e, pdfEmbed, leaf, file);
+        });
+
+        // 4. Create Pencil Button
         const pencilButton = activeDocument.createElement('button');
         pencilButton.classList.add('clickable-icon', 'pdf-toolbar-button', 'pdf-versioning-toolbar-button', 'pdf-versioning-pencil-button');
         pencilButton.setAttribute('aria-label', 'Open PDF Editor');
@@ -198,41 +245,35 @@ export default class PDFVersioningPlugin extends Plugin {
             }
         });
 
-        // Create Layers Button
-        // Create Layers Button
-        const layersButton = activeDocument.createElement('button');
-        layersButton.classList.add('clickable-icon', 'pdf-toolbar-button', 'pdf-versioning-toolbar-button', 'pdf-versioning-layers-button');
-        layersButton.setAttribute('aria-label', 'Mostra varianti PDF');
-        setIcon(layersButton, 'layers');
-        layersButton.addEventListener('click', (e) => {
-            e.stopPropagation();
-            void this.showVariantsPopup(e, pdfEmbed, leaf, file);
-        });
-
-        // Place on the right side of the toolbar:
+        // Place in order: [Title] [Collapse] [Layers] [Pencil]
         const toolbarRight = toolbar.querySelector('.pdf-toolbar-right');
         if (toolbarRight) {
             const children = Array.from(toolbarRight.children);
+            let target: Element | null = null;
             if (children.length >= 2) {
-                const target = children[children.length - 2];
-                toolbarRight.insertBefore(pencilButton, target);
-                toolbarRight.insertBefore(layersButton, pencilButton);
+                target = children[children.length - 2];
             } else if (children.length > 0) {
-                toolbarRight.insertBefore(pencilButton, children[0]);
-                toolbarRight.insertBefore(layersButton, pencilButton);
+                target = children[0];
+            }
+
+            if (target) {
+                toolbarRight.insertBefore(titleLabel, target);
+                toolbarRight.insertBefore(collapseButton, target);
+                toolbarRight.insertBefore(layersButton, target);
+                toolbarRight.insertBefore(pencilButton, target);
             } else {
+                toolbarRight.appendChild(titleLabel);
+                toolbarRight.appendChild(collapseButton);
                 toolbarRight.appendChild(layersButton);
                 toolbarRight.appendChild(pencilButton);
             }
         } else {
             const toolbarActions = toolbar.querySelector('.pdf-toolbar-actions');
-            if (toolbarActions) {
-                toolbarActions.appendChild(layersButton);
-                toolbarActions.appendChild(pencilButton);
-            } else {
-                toolbar.appendChild(layersButton);
-                toolbar.appendChild(pencilButton);
-            }
+            const targetContainer = toolbarActions || toolbar;
+            targetContainer.appendChild(titleLabel);
+            targetContainer.appendChild(collapseButton);
+            targetContainer.appendChild(layersButton);
+            targetContainer.appendChild(pencilButton);
         }
     }
 

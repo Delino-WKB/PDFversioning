@@ -1632,14 +1632,58 @@ var PDFVersioningPlugin = class extends import_obsidian.Plugin {
   injectButtons(toolbar, file, pdfEmbed, leaf) {
     const existingPencil = toolbar.querySelector(".pdf-versioning-pencil-button");
     const existingLayers = toolbar.querySelector(".pdf-versioning-layers-button");
-    if (toolbar.getAttribute("data-pdf-versioning-file-path") === file.path && existingPencil && existingLayers) {
+    const existingCollapse = toolbar.querySelector(".pdf-versioning-collapse-button");
+    const existingTitle = toolbar.querySelector(".pdf-versioning-title-label");
+    if (toolbar.getAttribute("data-pdf-versioning-file-path") === file.path && existingPencil && existingLayers && existingCollapse && existingTitle) {
       return;
     }
     if (existingPencil)
       existingPencil.remove();
     if (existingLayers)
       existingLayers.remove();
+    if (existingCollapse)
+      existingCollapse.remove();
+    if (existingTitle)
+      existingTitle.remove();
     toolbar.setAttribute("data-pdf-versioning-file-path", file.path);
+    const getTargetEl = () => {
+      if (pdfEmbed)
+        return pdfEmbed;
+      if (toolbar.closest(".internal-embed"))
+        return toolbar.closest(".internal-embed");
+      if (toolbar.closest(".pdf-embed"))
+        return toolbar.closest(".pdf-embed");
+      if (leaf && leaf.view.containerEl)
+        return leaf.view.containerEl;
+      return toolbar.parentElement;
+    };
+    const titleLabel = activeDocument.createElement("span");
+    titleLabel.classList.add("pdf-versioning-toolbar-title", "pdf-versioning-title-label");
+    titleLabel.textContent = file.name;
+    titleLabel.setAttribute("title", file.path);
+    let isCollapsed = false;
+    const collapseButton = activeDocument.createElement("button");
+    collapseButton.classList.add("clickable-icon", "pdf-toolbar-button", "pdf-versioning-toolbar-button", "pdf-versioning-collapse-button");
+    collapseButton.setAttribute("aria-label", "Collassa/Espandi PDF");
+    (0, import_obsidian.setIcon)(collapseButton, "chevron-up");
+    collapseButton.addEventListener("click", (e) => {
+      e.stopPropagation();
+      isCollapsed = !isCollapsed;
+      const targetEl = getTargetEl();
+      if (targetEl) {
+        targetEl.classList.toggle("pdf-versioning-collapsed", isCollapsed);
+      }
+      (0, import_obsidian.setIcon)(collapseButton, isCollapsed ? "chevron-down" : "chevron-up");
+      collapseButton.setAttribute("aria-label", isCollapsed ? "Espandi PDF" : "Collassa PDF");
+    });
+    const layersButton = activeDocument.createElement("button");
+    layersButton.classList.add("clickable-icon", "pdf-toolbar-button", "pdf-versioning-toolbar-button", "pdf-versioning-layers-button");
+    layersButton.setAttribute("aria-label", "Mostra varianti PDF");
+    (0, import_obsidian.setIcon)(layersButton, "layers");
+    layersButton.addEventListener("click", (e) => {
+      e.stopPropagation();
+      void this.showVariantsPopup(e, pdfEmbed, leaf, file);
+    });
     const pencilButton = activeDocument.createElement("button");
     pencilButton.classList.add("clickable-icon", "pdf-toolbar-button", "pdf-versioning-toolbar-button", "pdf-versioning-pencil-button");
     pencilButton.setAttribute("aria-label", "Open PDF Editor");
@@ -1674,37 +1718,33 @@ var PDFVersioningPlugin = class extends import_obsidian.Plugin {
         openApp();
       }
     });
-    const layersButton = activeDocument.createElement("button");
-    layersButton.classList.add("clickable-icon", "pdf-toolbar-button", "pdf-versioning-toolbar-button", "pdf-versioning-layers-button");
-    layersButton.setAttribute("aria-label", "Mostra varianti PDF");
-    (0, import_obsidian.setIcon)(layersButton, "layers");
-    layersButton.addEventListener("click", (e) => {
-      e.stopPropagation();
-      void this.showVariantsPopup(e, pdfEmbed, leaf, file);
-    });
     const toolbarRight = toolbar.querySelector(".pdf-toolbar-right");
     if (toolbarRight) {
       const children = Array.from(toolbarRight.children);
+      let target = null;
       if (children.length >= 2) {
-        const target = children[children.length - 2];
-        toolbarRight.insertBefore(pencilButton, target);
-        toolbarRight.insertBefore(layersButton, pencilButton);
+        target = children[children.length - 2];
       } else if (children.length > 0) {
-        toolbarRight.insertBefore(pencilButton, children[0]);
-        toolbarRight.insertBefore(layersButton, pencilButton);
+        target = children[0];
+      }
+      if (target) {
+        toolbarRight.insertBefore(titleLabel, target);
+        toolbarRight.insertBefore(collapseButton, target);
+        toolbarRight.insertBefore(layersButton, target);
+        toolbarRight.insertBefore(pencilButton, target);
       } else {
+        toolbarRight.appendChild(titleLabel);
+        toolbarRight.appendChild(collapseButton);
         toolbarRight.appendChild(layersButton);
         toolbarRight.appendChild(pencilButton);
       }
     } else {
       const toolbarActions = toolbar.querySelector(".pdf-toolbar-actions");
-      if (toolbarActions) {
-        toolbarActions.appendChild(layersButton);
-        toolbarActions.appendChild(pencilButton);
-      } else {
-        toolbar.appendChild(layersButton);
-        toolbar.appendChild(pencilButton);
-      }
+      const targetContainer = toolbarActions || toolbar;
+      targetContainer.appendChild(titleLabel);
+      targetContainer.appendChild(collapseButton);
+      targetContainer.appendChild(layersButton);
+      targetContainer.appendChild(pencilButton);
     }
   }
   getSuffixRegex() {
