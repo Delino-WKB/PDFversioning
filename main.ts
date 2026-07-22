@@ -282,7 +282,7 @@ export default class PDFVersioningPlugin extends Plugin {
     }
 
     getSuffixRegex(): RegExp {
-        return this.settings.versioningStyle === 'human' ? /_Version_(\d+)$/ : /_(\d{6})_(\d{6})$/;
+        return /(_Version_\d+|_(\d{6})_(\d{6}))$/;
     }
 
     getBaseName(fileName: string): string {
@@ -294,19 +294,14 @@ export default class PDFVersioningPlugin extends Plugin {
     }
 
     formatVariantLabel(file: TFile): string {
-        if (!this.hasSuffix(file.basename)) return file.basename;
-        
-        if (this.settings.versioningStyle === 'human') {
-            const match = file.basename.match(/_Version_(\d+)$/);
-            if (match) {
-                return `Version ${match[1]}`;
-            }
-        } else {
-            const match = file.basename.match(/_(\d{2})(\d{2})(\d{2})_(\d{2})(\d{2})(\d{2})$/);
-            if (match) {
-                const [, yy, mm, dd, hh, min, ss] = match;
-                return `${dd}/${mm}/20${yy} ${hh}:${min}:${ss}`;
-            }
+        const matchHuman = file.basename.match(/_Version_(\d+)$/);
+        if (matchHuman) {
+            return `Version ${matchHuman[1]}`;
+        }
+        const matchSamsung = file.basename.match(/_(\d{2})(\d{2})(\d{2})_(\d{2})(\d{2})(\d{2})$/);
+        if (matchSamsung) {
+            const [, yy, mm, dd, hh, min, ss] = matchSamsung;
+            return `${dd}/${mm}/20${yy} ${hh}:${min}:${ss}`;
         }
         return file.basename;
     }
@@ -326,12 +321,10 @@ export default class PDFVersioningPlugin extends Plugin {
             if (!aHasSuffix && bHasSuffix) return -1;
             if (aHasSuffix && !bHasSuffix) return 1;
             
-            if (this.settings.versioningStyle === 'human') {
-                const matchA = a.basename.match(/_Version_(\d+)$/);
-                const matchB = b.basename.match(/_Version_(\d+)$/);
-                if (matchA && matchB) {
-                    return parseInt(matchA[1]) - parseInt(matchB[1]);
-                }
+            const matchHumanA = a.basename.match(/_Version_(\d+)$/);
+            const matchHumanB = b.basename.match(/_Version_(\d+)$/);
+            if (matchHumanA && matchHumanB) {
+                return parseInt(matchHumanA[1]) - parseInt(matchHumanB[1]);
             }
             return a.basename.localeCompare(b.basename);
         });
