@@ -177,7 +177,13 @@ Go to the plugin settings under **Note Management** to access bulk cleanup tools
 Scans the entire vault for duplicate PDF versions.
 * **Keep only most recent:** Bulk-deletes all older versions, automatically updating all embeds in your notes to link to the latest copy.
 * **Preview:** Opens a mobile-compatible preview modal to visually inspect the PDF content.
-`
+
+
+---
+
+### \u{1F4F1} Samsung Notes Long Filename Integration Note
+When exporting or editing a PDF in Samsung Notes, if the original filename exceeds 50 characters, Samsung Notes automatically truncates it to 50 characters before appending the timestamp (e.g. \`_260722_114213\`).
+By enabling the **"Samsung Notes Long Filename Fix"** option in the plugin settings (visible when style is Samsung), PDF Versioning will compare the first 50 "safe" characters of filenames, ensuring that variants with long names are properly detected and grouped.`
   },
   it: {
     opening: 'Apertura con PDF versioning...\n\n---\n\n### \u{1F4F1} Samsung Notes Long Filename Integration Note\nWhen exporting or editing a PDF in Samsung Notes, if the original filename exceeds 50 characters, Samsung Notes automatically truncates it to 50 characters before appending the timestamp (e.g. `_260722_114213`).\nBy enabling the **"Samsung Notes Long Filename Fix"** option in the plugin settings (visible when style is Samsung), PDF Versioning will compare the first 50 "safe" characters of filenames, ensuring that variants with long names are properly detected and grouped.',
@@ -324,7 +330,13 @@ Vai alle impostazioni del plugin in **Gestione delle note** per accedere agli st
 Scansiona l'intero vault alla ricerca di versioni PDF duplicate.
 * **Tieni solo pi\xF9 recente:** Elimina in blocco tutte le versioni precedenti, aggiornando automaticamente tutti gli elementi incorporati nelle note per collegarli alla copia pi\xF9 recente.
 * **Anteprima:** Apre un modal di anteprima compatibile con i dispositivi mobili per ispezionare visivamente il contenuto del PDF.
-`
+
+
+---
+
+### \u{1F4F1} Note sull'integrazione con Samsung Notes e nomi file lunghi
+Quando esportate o modificate un PDF in Samsung Notes, se il nome del file originale supera i 50 caratteri, Samsung Notes lo troncher\xE0 automaticamente a 50 caratteri prima di aggiungere la data e l'ora (es. \`_260722_114213\`).
+Abilitando l'opzione **"Supporto nomi lunghi Samsung Notes"** nelle impostazioni del plugin (visibile quando lo stile \xE8 Samsung), PDF Versioning confronter\xE0 i primi 50 caratteri "sicuri" dei file, garantendo che anche le varianti dai nomi molto lunghi vengano riconosciute e raggruppate correttamente.`
   },
   fr: {
     opening: `Ouverture avec PDF versioning...
@@ -477,7 +489,13 @@ Acc\xE9dez aux param\xE8tres du plugin sous **Gestion des notes** pour acc\xE9de
 Analyse l'ensemble du coffre \xE0 la recherche de versions de PDF doublons.
 * **Garder uniquement la plus r\xE9cente :** Supprime en masse toutes les versions plus anciennes, mettant automatiquement \xE0 jour toutes les int\xE9grations de vos notes pour pointer vers la derni\xE8re copie.
 * **Aper\xE7u :** Ouvre une fen\xEAtre d'aper\xE7u compatible mobile pour inspecter visuellement le contenu du PDF.
-`
+
+
+---
+
+### \u{1F4F1} Note sur l'int\xE9gration Samsung Notes et les noms de fichiers longs
+Lors de l'exportation ou de la modification d'un PDF dans Samsung Notes, si le nom d'origine d\xE9passe 50 caract\xE8res, Samsung Notes le tronque automatiquement \xE0 50 caract\xE8res avant d'ajouter l'horodatage (ex. \`_260722_114213\`).
+En activant l'option **"Correction des noms longs Samsung Notes"** dans les param\xE8tres du plugin (visible en mode Samsung), PDF Versioning comparera les 50 premiers caract\xE8res des fichiers, garantissant la d\xE9tection exacte des variantes aux noms tr\xE8s longs.`
   },
   de: {
     opening: "\xD6ffnen mit PDF versioning...\n\n---\n\n### \u{1F4F1} Note sur l'int\xE9gration Samsung Notes et les noms de fichiers longs\nLors de l'exportation ou de la modification d'un PDF dans Samsung Notes, si le nom d'origine d\xE9passe 50 caract\xE8res, Samsung Notes le tronque automatiquement \xE0 50 caract\xE8res avant d'ajouter l'horodatage (ex. `_260722_114213`).\nEn activant l'option **\"Correction des noms longs Samsung Notes\"** dans les param\xE8tres du plugin (visible en mode Samsung), PDF Versioning comparera les 50 premiers caract\xE8res des fichiers, garantissant la d\xE9tection exacte des variantes aux noms tr\xE8s longs.",
@@ -624,7 +642,13 @@ Gehen Sie in den Plugin-Einstellungen auf **Notizenverwaltung**, um auf die Bere
 Scannt den gesamten Vault nach doppelten PDF-Versionen.
 * **Nur die neueste behalten:** L\xF6scht alle \xE4lteren Versionen im Stapelbetrieb und aktualisiert automatisch alle Einbettungen in Ihren Notizen, sodass sie auf die neueste Kopie verweisen.
 * **Vorschau:** \xD6ffnet ein webtaugliches Vorschaufenster zur visuellen \xDCberpr\xFCfung des PDF-Inhalts.
-`
+
+
+---
+
+### \u{1F4F1} Hinweis zur Integration von Samsung Notes bei langen Dateinamen
+Beim Exportieren oder Bearbeiten einer PDF-Datei in Samsung Notes k\xFCrzt Samsung Notes Dateinamen automatisch auf 50 Zeichen, wenn der Originalname 50 Zeichen \xFCberschreitet, bevor der Zeitstempel (z. B. \`_260722_114213\`) angeh\xE4ngt wird.
+Durch Aktivieren der Option **"Korrektur f\xFCr lange Dateinamen in Samsung Notes"** in den Einstellungen (sichtbar im Samsung-Stil) vergleicht PDF Versioning nur die ersten 50 "sicheren" Zeichen der Dateinamen, sodass auch Varianten mit sehr langen Namen korrekt erkannt und gruppiert werden.`
   },
   es: {
     opening: 'Abriendo con PDF versioning...\n\n---\n\n### \u{1F4F1} Hinweis zur Integration von Samsung Notes bei langen Dateinamen\nBeim Exportieren oder Bearbeiten einer PDF-Datei in Samsung Notes k\xFCrzt Samsung Notes Dateinamen automatisch auf 50 Zeichen, wenn der Originalname 50 Zeichen \xFCberschreitet, bevor der Zeitstempel (z. B. `_260722_114213`) angeh\xE4ngt wird.\nDurch Aktivieren der Option **"Korrektur f\xFCr lange Dateinamen in Samsung Notes"** in den Einstellungen (sichtbar im Samsung-Stil) vergleicht PDF Versioning nur die ersten 50 "sicheren" Zeichen der Dateinamen, sodass auch Varianten mit sehr langen Namen korrekt erkannt und gruppiert werden.',
@@ -771,7 +795,13 @@ Vaya a la configuraci\xF3n del complemento en **Gesti\xF3n de notas** para acced
 Escanea todo el almac\xE9n en busca de versiones de PDF duplicadas.
 * **Conservar solo la m\xE1s reciente:** Elimina de forma masiva todas las versiones anteriores, actualizando autom\xE1ticamente todas las incrustaciones de sus notas para vincularlas a la copia m\xE1s reciente.
 * **Vista previa:** Abre un modal de vista previa compatible con dispositivos m\xF3viles para inspeccionar visualmente el contenido del PDF.
-`
+
+
+---
+
+### \u{1F4F1} Nota de integraci\xF3n con Samsung Notes y nombres de archivo largos
+Al exportar o editar un PDF en Samsung Notes, si el nombre original supera los 50 caracteres, Samsung Notes lo trunca autom\xE1ticamente a 50 caracteres antes de a\xF1adir la marca de tiempo (ej. \`_260722_114213\`).
+Al activar la opci\xF3n **"Correcci\xF3n de nombres largos de Samsung Notes"** en la configuraci\xF3n del complemento (visible en estilo Samsung), PDF Versioning comparar\xE1 los primeros 50 caracteres "seguros" de los archivos, garantizando que las variantes con nombres largos se detecten y agrupen correctamente.`
   },
   pl: {
     opening: 'Otwieranie z PDF versioning...\n\n---\n\n### \u{1F4F1} Nota de integraci\xF3n con Samsung Notes y nombres de archivo largos\nAl exportar o editar un PDF en Samsung Notes, si el nombre original supera los 50 caracteres, Samsung Notes lo trunca autom\xE1ticamente a 50 caracteres antes de a\xF1adir la marca de tiempo (ej. `_260722_114213`).\nAl activar la opci\xF3n **"Correcci\xF3n de nombres largos de Samsung Notes"** en la configuraci\xF3n del complemento (visible en estilo Samsung), PDF Versioning comparar\xE1 los primeros 50 caracteres "seguros" de los archivos, garantizando que las variantes con nombres largos se detecten y agrupen correctamente.',
@@ -833,6 +863,8 @@ Escanea todo el almac\xE9n en busca de versiones de PDF duplicadas.
     settingVersioningStyleDesc: "Wybierz konwencj\u0119 nazewnictwa u\u017Cywan\u0105 do identyfikacji r\xF3\u017Cnych wersji pliku PDF. \n- Human: file_Version_1.pdf\n- Samsung: file_20260624_153505.pdf",
     versioningStyleSamsung: "Styl Samsung (podw\xF3jny znacznik czasu)",
     versioningStyleHuman: "Styl Human (_Version_X)",
+    settingSamsungTruncateName: "Poprawka d\u0142ugich nazw plik\xF3w Samsung Notes",
+    settingSamsungTruncateDesc: "Por\xF3wnuj tylko pierwsze 50 znak\xF3w nazwy pliku (Samsung Notes skraca nazwy plik\xF3w d\u0142u\u017Csze ni\u017C 50 znak\xF3w przed dodaniem znacznika czasu).",
     tutorialMarkdown: `# \u{1F4F1} PDF versioning Instrukcja i przep\u0142yw pracy
 
 Ta wtyczka umo\u017Cliwia bezproblemowe po\u0142\u0105czenie mi\u0119dzy **Obsidian** a dowolnym zewn\u0119trznym edytorem PDF. Mo\u017Cesz dodawa\u0107 adnotacje do swoich notatek PDF i automatycznie zarz\u0105dza\u0107 wieloma wersjami (wariantami) tworzonymi podczas pracy.
@@ -916,7 +948,13 @@ Przejd\u017A do ustawie\u0144 wtyczki w sekcji **Zarz\u0105dzanie notatkami**, a
 Skanuje ca\u0142y skarbiec w poszukiwaniu zduplikowanych wersji plik\xF3w PDF.
 * **Zachowaj tylko najnowsze:** Usuwa zbiorczo wszystkie starsze wersje, automatycznie aktualizuj\u0105c wszystkie osadzenia w notatkach, aby prowadzi\u0142y do najnowszej kopii.
 * **Podgl\u0105d:** Otwiera kompatybilne z urz\u0105dzeniami mobilnymi okno podgl\u0105du w celu wizualnej oceny zawarto\u015Bci pliku PDF.
-`
+
+
+---
+
+### \u{1F4F1} Uwaga dotycz\u0105ca integracji d\u0142ugich nazw plik\xF3w Samsung Notes
+Podczas eksportowania lub edycji pliku PDF w Samsung Notes, je\u015Bli oryginalna nazwa pliku przekracza 50 znak\xF3w, Samsung Notes automatycznie skraca j\u0105 do 50 znak\xF3w przed dodaniem znacznika czasu (np. \`_260722_114213\`).
+W\u0142\u0105czaj\u0105c opcj\u0119 **"Poprawka d\u0142ugich nazw plik\xF3w Samsung Notes"** w ustawieniach wtyczki (widoczn\u0105, gdy stylem jest Samsung), PDF Versioning por\xF3wna tylko pierwsze 50 "bezpiecznych" znak\xF3w nazw plik\xF3w, zapewniaj\u0105c prawid\u0142owe wykrywanie i grupowanie wariant\xF3w o d\u0142ugich nazwach.`
   },
   zh: {
     opening: "\u6B63\u5728\u4F7F\u7528 PDF versioning \u6253\u5F00...",
@@ -978,6 +1016,8 @@ Skanuje ca\u0142y skarbiec w poszukiwaniu zduplikowanych wersji plik\xF3w PDF.
     settingVersioningStyleDesc: "\u9009\u62E9\u7528\u4E8E\u8BC6\u522B PDF \u4E0D\u540C\u7248\u672C\u7684\u547D\u540D\u89C4\u8303\u3002\n- Human: file_Version_1.pdf\n- Samsung: file_20260624_153505.pdf",
     versioningStyleSamsung: "Samsung \u6837\u5F0F\uFF08\u53CC\u65F6\u95F4\u6233\uFF09",
     versioningStyleHuman: "Human \u6837\u5F0F\uFF08_Version_X\uFF09",
+    settingSamsungTruncateName: "\u4E09\u661F\u7B14\u8BB0\u957F\u6587\u4EF6\u540D\u4FEE\u590D",
+    settingSamsungTruncateDesc: "\u4EC5\u6BD4\u8F83\u6587\u4EF6\u540D\u7684\u524D50\u4E2A\u5B57\u7B26\uFF08\u4E09\u661F\u7B14\u8BB0\u5728\u6DFB\u52A0\u65F6\u95F4\u6233\u4E4B\u524D\u4F1A\u5C06\u8D85\u8FC750\u4E2A\u5B57\u7B26\u7684\u57FA\u7840\u6587\u4EF6\u540D\u622A\u65AD\uFF09\u3002",
     tutorialMarkdown: `# \u{1F4F1} PDF versioning \u6307\u5357\u4E0E\u5DE5\u4F5C\u6D41
 
 \u6B64\u63D2\u4EF6\u53EF\u5728 **Obsidian** \u4E0E\u4EFB\u4F55\u5916\u90E8 PDF \u7F16\u8F91\u5668\u4E4B\u95F4\u5B9E\u73B0\u65E0\u7F1D\u8FDE\u63A5\u3002\u60A8\u53EF\u4EE5\u4E3A PDF \u6DFB\u52A0\u6279\u6CE8\uFF0C\u5E76\u81EA\u52A8\u7BA1\u7406\u5DE5\u4F5C\u6D41\u4E2D\u4EA7\u751F\u7684\u591A\u4E2A\u7248\u672C\uFF08\u53D8\u4F53\uFF09\u3002
@@ -1061,7 +1101,13 @@ Skanuje ca\u0142y skarbiec w poszukiwaniu zduplikowanych wersji plik\xF3w PDF.
 \u626B\u63CF\u6574\u4E2A\u4FDD\u9669\u7BB1\u4EE5\u67E5\u627E\u91CD\u590D\u7684 PDF \u7248\u672C\u3002
 * **\u4EC5\u4FDD\u7559\u6700\u65B0\u7248\u672C\uFF1A** \u6279\u91CF\u5220\u9664\u6240\u6709\u65E7\u7248\u672C\uFF0C\u5E76\u81EA\u52A8\u5C06\u7B14\u8BB0\u4E2D\u7684\u6240\u6709\u5D4C\u5165\u66F4\u65B0\u4E3A\u94FE\u63A5\u5230\u6700\u65B0\u526F\u672C\u3002
 * **\u9884\u89C8\uFF1A** \u6253\u5F00\u9002\u914D\u79FB\u52A8\u7AEF\u7684\u9884\u89C8\u5F39\u7A97\uFF0C\u76F4\u89C2\u68C0\u67E5 PDF \u5185\u5BB9\u3002
-`
+
+
+---
+
+### \u{1F4F1} \u4E09\u661F\u7B14\u8BB0\u957F\u6587\u4EF6\u540D\u96C6\u6210\u8BF4\u660E
+\u5728\u4E09\u661F\u7B14\u8BB0\u4E2D\u5BFC\u51FA\u6216\u7F16\u8F91PDF\u65F6\uFF0C\u5982\u679C\u539F\u59CB\u6587\u4EF6\u540D\u8D85\u8FC750\u4E2A\u5B57\u7B26\uFF0C\u4E09\u661F\u7B14\u8BB0\u4F1A\u5728\u6DFB\u52A0\u65F6\u95F4\u6233\uFF08\u4F8B\u5982 \`_260722_114213\`\uFF09\u4E4B\u524D\u81EA\u52A8\u5C06\u5176\u622A\u65AD\u4E3A50\u4E2A\u5B57\u7B26\u3002
+\u5728\u63D2\u4EF6\u8BBE\u7F6E\u4E2D\u542F\u7528 **\u201C\u4E09\u661F\u7B14\u8BB0\u957F\u6587\u4EF6\u540D\u4FEE\u590D\u201D** \u9009\u9879\uFF08\u5728\u6A21\u5F0F\u4E3A\u4E09\u661F\u65F6\u53EF\u89C1\uFF09\uFF0CPDF Versioning \u5C06\u4EC5\u6BD4\u8F83\u6587\u4EF6\u540D\u7684\u524D50\u4E2A\u201C\u5B89\u5168\u201D\u5B57\u7B26\uFF0C\u786E\u4FDD\u5B8C\u7F8E\u8BC6\u522B\u5E76\u5206\u7EC4\u957F\u6587\u4EF6\u540D\u7684\u53D8\u4F53\u3002`
   },
   ja: {
     opening: "PDF versioning \u3067\u958B\u3044\u3066\u3044\u307E\u3059...",
@@ -1123,6 +1169,8 @@ Skanuje ca\u0142y skarbiec w poszukiwaniu zduplikowanych wersji plik\xF3w PDF.
     settingVersioningStyleDesc: "PDF\u306E\u7570\u306A\u308B\u30D0\u30FC\u30B8\u30E7\u30F3\u3092\u8B58\u5225\u3059\u308B\u305F\u3081\u306B\u4F7F\u7528\u3059\u308B\u547D\u540D\u898F\u5247\u3092\u9078\u629E\u3057\u307E\u3059\u3002\n- Human: file_Version_1.pdf\n- Samsung: file_20260624_153505.pdf",
     versioningStyleSamsung: "Samsung\u30B9\u30BF\u30A4\u30EB\uFF08\u30C0\u30D6\u30EB\u30BF\u30A4\u30E0\u30B9\u30BF\u30F3\u30D7\uFF09",
     versioningStyleHuman: "Human\u30B9\u30BF\u30A4\u30EB\uFF08_Version_X\uFF09",
+    settingSamsungTruncateName: "Samsung Notes \u9577\u3044\u30D5\u30A1\u30A4\u30EB\u540D\u306E\u4FEE\u6B63",
+    settingSamsungTruncateDesc: "\u30D5\u30A1\u30A4\u30EB\u540D\u306E\u6700\u521D\u306E50\u6587\u5B57\u306E\u307F\u3092\u6BD4\u8F03\u3057\u307E\u3059\uFF08Samsung Notes\u306F\u30BF\u30A4\u30E0\u30B9\u30BF\u30F3\u30D7\u3092\u8FFD\u52A0\u3059\u308B\u524D\u306B50\u6587\u5B57\u3092\u8D85\u3048\u308B\u57FA\u672C\u30D5\u30A1\u30A4\u30EB\u540D\u3092\u5207\u65AD\u3057\u307E\u3059\uFF09\u3002",
     tutorialMarkdown: `# \u{1F4F1} PDF versioning \u30AC\u30A4\u30C9 \uFF06 \u30EF\u30FC\u30AF\u30D5\u30ED\u30FC
 
 \u3053\u306E\u30D7\u30E9\u30B0\u30A4\u30F3\u306F\u3001**Obsidian** \u3068\u5916\u90E8\u306E PDF \u30A8\u30C7\u30A3\u30BF\u3092\u30B7\u30FC\u30E0\u30EC\u30B9\u306B\u63A5\u7D9A\u3057\u307E\u3059\u3002PDF \u5F62\u5F0F\u306E\u30CE\u30FC\u30C8\u306B\u6CE8\u91C8\u3092\u66F8\u304D\u8FBC\u307F\u3001\u30EF\u30FC\u30AF\u30D5\u30ED\u30FC\u4E2D\u306B\u4F5C\u6210\u3055\u308C\u305F\u8907\u6570\u306E\u30D0\u30FC\u30B8\u30E7\u30F3\uFF08\u30D0\u30EA\u30A2\u30F3\u30C8\uFF09\u3092\u81EA\u52D5\u7684\u306B\u7BA1\u7406\u3067\u304D\u307E\u3059\u3002
@@ -1206,7 +1254,13 @@ Obsidian \u306B\u623B\u308A\u3001**\u30EC\u30A4\u30E4\u30FC\u30DC\u30BF\u30F3**\
 \u30D5\u30A9\u30EB\u30C0\u5168\u4F53\u3092\u30B9\u30AD\u30E3\u30F3\u3057\u3066\u91CD\u8907\u3059\u308B PDF \u30D0\u30FC\u30B8\u30E7\u30F3\u3092\u898B\u3064\u3051\u307E\u3059\u3002
 * **\u6700\u65B0\u306E\u307F\u4FDD\u6301\uFF1A** \u53E4\u3044\u30D0\u30FC\u30B8\u30E7\u30F3\u3092\u4E00\u62EC\u524A\u9664\u3057\u3001\u30CE\u30FC\u30C8\u5185\u306E\u3059\u3079\u3066\u306E\u57CB\u3081\u8FBC\u307F\u3092\u81EA\u52D5\u7684\u306B\u6700\u65B0\u306E\u30B3\u30D4\u30FC\u306B\u66F4\u65B0\u3057\u307E\u3059\u3002
 * **\u30D7\u30EC\u30D3\u30E5\u30FC\uFF1A** \u30E2\u30D0\u30A4\u30EB\u5BFE\u5FDC\u306E\u30D7\u30EC\u30D3\u30E5\u30FC\u30A6\u30A3\u30F3\u30C9\u30A6\u3092\u958B\u3044\u3066\u3001PDF \u306E\u5185\u5BB9\u3092\u76EE\u8996\u3067\u78BA\u8A8D\u3057\u307E\u3059\u3002
-`
+
+
+---
+
+### \u{1F4F1} Samsung Notes \u9577\u3044\u30D5\u30A1\u30A4\u30EB\u540D\u7D71\u5408\u30CE\u30FC\u30C8
+Samsung Notes\u3067PDF\u3092\u30A8\u30AF\u30B9\u30DD\u30FC\u30C8\u307E\u305F\u306F\u7DE8\u96C6\u3059\u308B\u969B\u3001\u5143\u306E\u30D5\u30A1\u30A4\u30EB\u540D\u304C50\u6587\u5B57\u3092\u8D85\u3048\u308B\u5834\u5408\u3001Samsung Notes\u306F\u30BF\u30A4\u30E0\u30B9\u30BF\u30F3\u30D7\uFF08\u4F8B: \`_260722_114213\`\uFF09\u3092\u8FFD\u52A0\u3059\u308B\u524D\u306B\u81EA\u52D5\u7684\u306B50\u6587\u5B57\u306B\u5207\u308A\u8A70\u3081\u307E\u3059\u3002
+\u30D7\u30E9\u30B0\u30A4\u30F3\u8A2D\u5B9A\u3067 **\u300CSamsung Notes \u9577\u3044\u30D5\u30A1\u30A4\u30EB\u540D\u306E\u4FEE\u6B63\u300D** \u30AA\u30D7\u30B7\u30E7\u30F3\uFF08\u30B9\u30BF\u30A4\u30EB\u304CSamsung\u306E\u5834\u5408\u306B\u8868\u793A\uFF09\u3092\u6709\u52B9\u306B\u3059\u308B\u3068\u3001PDF Versioning\u306F\u30D5\u30A1\u30A4\u30EB\u540D\u306E\u6700\u521D\u306E50\u6587\u5B57\u306E\u300C\u5B89\u5168\u306A\u300D\u6587\u5B57\u306E\u307F\u3092\u6BD4\u8F03\u3057\u3001\u9577\u3044\u540D\u524D\u306E\u30D0\u30EA\u30A2\u30F3\u30C8\u3092\u6B63\u3057\u304F\u8A8D\u8B58\u3057\u3066\u30B0\u30EB\u30FC\u30D7\u5316\u3057\u307E\u3059\u3002`
   },
   ru: {
     opening: "\u041E\u0442\u043A\u0440\u044B\u0442\u0438\u0435 \u0447\u0435\u0440\u0435\u0437 PDF versioning...",
@@ -1268,6 +1322,8 @@ Obsidian \u306B\u623B\u308A\u3001**\u30EC\u30A4\u30E4\u30FC\u30DC\u30BF\u30F3**\
     settingVersioningStyleDesc: "\u0412\u044B\u0431\u0435\u0440\u0438\u0442\u0435 \u0441\u043E\u0433\u043B\u0430\u0448\u0435\u043D\u0438\u0435 \u043E \u043D\u0430\u0438\u043C\u0435\u043D\u043E\u0432\u0430\u043D\u0438\u0438, \u0438\u0441\u043F\u043E\u043B\u044C\u0437\u0443\u0435\u043C\u043E\u0435 \u0434\u043B\u044F \u0438\u0434\u0435\u043D\u0442\u0438\u0444\u0438\u043A\u0430\u0446\u0438\u0438 \u0440\u0430\u0437\u043B\u0438\u0447\u043D\u044B\u0445 \u0432\u0435\u0440\u0441\u0438\u0439 PDF-\u0444\u0430\u0439\u043B\u0430. \n- Human: file_Version_1.pdf\n- Samsung: file_20260624_153505.pdf",
     versioningStyleSamsung: "\u0421\u0442\u0438\u043B\u044C Samsung (\u0434\u0432\u043E\u0439\u043D\u0430\u044F \u043E\u0442\u043C\u0435\u0442\u043A\u0430 \u0432\u0440\u0435\u043C\u0435\u043D\u0438)",
     versioningStyleHuman: "\u0421\u0442\u0438\u043B\u044C Human (_Version_X)",
+    settingSamsungTruncateName: "\u0418\u0441\u043F\u0440\u0430\u0432\u043B\u0435\u043D\u0438\u0435 \u0434\u043B\u0438\u043D\u043D\u044B\u0445 \u0438\u043C\u0435\u043D \u0444\u0430\u0439\u043B\u043E\u0432 Samsung Notes",
+    settingSamsungTruncateDesc: "\u0421\u0440\u0430\u0432\u043D\u0438\u0432\u0430\u0435\u0442 \u0442\u043E\u043B\u044C\u043A\u043E \u043F\u0435\u0440\u0432\u044B\u0435 50 \u0441\u0438\u043C\u0432\u043E\u043B\u043E\u0432 \u0438\u043C\u0435\u043D\u0438 \u0444\u0430\u0439\u043B\u0430 (Samsung Notes \u043E\u0431\u0440\u0435\u0437\u0430\u0435\u0442 \u0438\u043C\u044F \u0444\u0430\u0439\u043B\u0430 \u0434\u043B\u0438\u043D\u043D\u0435\u0435 50 \u0441\u0438\u043C\u0432\u043E\u043B\u043E\u0432 \u043F\u0435\u0440\u0435\u0434 \u0434\u043E\u0431\u0430\u0432\u043B\u0435\u043D\u0438\u0435\u043C \u043C\u0435\u0442\u043A\u0438 \u0432\u0440\u0435\u043C\u0435\u043D\u0438).",
     tutorialMarkdown: `# \u{1F4F1} \u0420\u0443\u043A\u043E\u0432\u043E\u0434\u0441\u0442\u0432\u043E \u0438 \u0440\u0430\u0431\u043E\u0447\u0438\u0439 \u043F\u0440\u043E\u0446\u0435\u0441\u0441 PDF versioning
 
 \u042D\u0442\u043E\u0442 \u043F\u043B\u0430\u0433\u0438\u043D \u043E\u0431\u0435\u0441\u043F\u0435\u0447\u0438\u0432\u0430\u0435\u0442 \u0431\u0435\u0441\u0448\u043E\u0432\u043D\u043E\u0435 \u0441\u043E\u0435\u0434\u0438\u043D\u0435\u043D\u0438\u0435 \u043C\u0435\u0436\u0434\u0443 **Obsidian** \u0438 \u043B\u044E\u0431\u044B\u043C \u0432\u043D\u0435\u0448\u043D\u0438\u043C \u0440\u0435\u0434\u0430\u043A\u0442\u043E\u0440\u043E\u043C PDF. \u0412\u044B \u043C\u043E\u0436\u0435\u0442\u0435 \u0430\u043D\u043D\u043E\u0442\u0438\u0440\u043E\u0432\u0430\u0442\u044C \u0441\u0432\u043E\u0438 PDF-\u0437\u0430\u043C\u0435\u0442\u043A\u0438 \u0438 \u0430\u0432\u0442\u043E\u043C\u0430\u0442\u0438\u0447\u0435\u0441\u043A\u0438 \u0443\u043F\u0440\u0430\u0432\u043B\u044F\u0442\u044C \u043D\u0435\u0441\u043A\u043E\u043B\u044C\u043A\u0438\u043C\u0438 \u0432\u0435\u0440\u0441\u0438\u044F\u043C\u0438 (\u0432\u0430\u0440\u0438\u0430\u043D\u0442\u0430\u043C\u0438), \u0441\u043E\u0437\u0434\u0430\u043D\u043D\u044B\u043C\u0438 \u0432 \u0445\u043E\u0434\u0435 \u0440\u0430\u0431\u043E\u0447\u0435\u0433\u043E \u043F\u0440\u043E\u0446\u0435\u0441\u0441\u0430.
@@ -1351,7 +1407,13 @@ Obsidian \u306B\u623B\u308A\u3001**\u30EC\u30A4\u30E4\u30FC\u30DC\u30BF\u30F3**\
 \u0421\u043A\u0430\u043D\u0438\u0440\u0443\u0435\u0442 \u0432\u0441\u0451 \u0445\u0440\u0430\u043D\u0438\u043B\u0438\u0449\u0435 \u043D\u0430 \u043D\u0430\u043B\u0438\u0447\u0438\u0435 \u0434\u0443\u0431\u043B\u0438\u043A\u0430\u0442\u043E\u0432 \u0432\u0435\u0440\u0441\u0438\u0439 PDF.
 * **\u0421\u043E\u0445\u0440\u0430\u043D\u0438\u0442\u044C \u0442\u043E\u043B\u044C\u043A\u043E \u043F\u043E\u0441\u043B\u0435\u0434\u043D\u044E\u044E:** \u041C\u0430\u0441\u0441\u043E\u0432\u043E \u0443\u0434\u0430\u043B\u044F\u0435\u0442 \u0432\u0441\u0435 \u0431\u043E\u043B\u0435\u0435 \u0441\u0442\u0430\u0440\u044B\u0435 \u0432\u0435\u0440\u0441\u0438\u0438, \u0430\u0432\u0442\u043E\u043C\u0430\u0442\u0438\u0447\u0435\u0441\u043A\u0438 \u043E\u0431\u043D\u043E\u0432\u043B\u044F\u044F \u0432\u0441\u0435 \u0441\u0441\u044B\u043B\u043A\u0438 \u0432\u043E \u0432\u0441\u0442\u0440\u043E\u0435\u043D\u043D\u044B\u0445 \u0444\u0430\u0439\u043B\u0430\u0445 \u043D\u0430 \u0430\u043A\u0442\u0443\u0430\u043B\u044C\u043D\u0443\u044E \u043A\u043E\u043F\u0438\u044E.
 * **\u041F\u0440\u0435\u0434\u043F\u0440\u043E\u0441\u043C\u043E\u0442\u0440:** \u041E\u0442\u043A\u0440\u044B\u0432\u0430\u0435\u0442 \u043E\u043A\u043D\u043E \u043F\u0440\u0435\u0434\u0432\u0430\u0440\u0438\u0442\u0435\u043B\u044C\u043D\u043E\u0433\u043E \u043F\u0440\u043E\u0441\u043C\u043E\u0442\u0440\u0430 \u0434\u043B\u044F \u0432\u0438\u0437\u0443\u0430\u043B\u044C\u043D\u043E\u0433\u043E \u043A\u043E\u043D\u0442\u0440\u043E\u043B\u044F \u0441\u043E\u0434\u0435\u0440\u0436\u0438\u043C\u043E\u0433\u043E PDF.
-`
+
+
+---
+
+### \u{1F4F1} \u041F\u0440\u0438\u043C\u0435\u0447\u0430\u043D\u0438\u0435 \u043F\u043E \u0438\u043D\u0442\u0435\u0433\u0440\u0430\u0446\u0438\u0438 \u0434\u043B\u0438\u043D\u043D\u044B\u0445 \u0438\u043C\u0435\u043D \u0444\u0430\u0439\u043B\u043E\u0432 Samsung Notes
+\u041F\u0440\u0438 \u044D\u043A\u0441\u043F\u043E\u0440\u0442\u0435 \u0438\u043B\u0438 \u0440\u0435\u0434\u0430\u043A\u0442\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0438 PDF \u0432 Samsung Notes, \u0435\u0441\u043B\u0438 \u0438\u0441\u0445\u043E\u0434\u043D\u043E\u0435 \u0438\u043C\u044F \u0444\u0430\u0439\u043B\u0430 \u043F\u0440\u0435\u0432\u044B\u0448\u0430\u0435\u0442 50 \u0441\u0438\u043C\u0432\u043E\u043B\u043E\u0432, Samsung Notes \u0430\u0432\u0442\u043E\u043C\u0430\u0442\u0438\u0447\u0435\u0441\u043A\u0438 \u043E\u0431\u0440\u0435\u0437\u0430\u0435\u0442 \u0435\u0433\u043E \u0434\u043E 50 \u0441\u0438\u043C\u0432\u043E\u043B\u043E\u0432 \u043F\u0435\u0440\u0435\u0434 \u0434\u043E\u0431\u0430\u0432\u043B\u0435\u043D\u0438\u0435\u043C \u043C\u0435\u0442\u043A\u0438 \u0432\u0440\u0435\u043C\u0435\u043D\u0438 (\u043D\u0430\u043F\u0440\u0438\u043C\u0435\u0440, \`_260722_114213\`).
+\u0412\u043A\u043B\u044E\u0447\u0438\u0432 \u043F\u0430\u0440\u0430\u043C\u0435\u0442\u0440 **"\u0418\u0441\u043F\u0440\u0430\u0432\u043B\u0435\u043D\u0438\u0435 \u0434\u043B\u0438\u043D\u043D\u044B\u0445 \u0438\u043C\u0435\u043D \u0444\u0430\u0439\u043B\u043E\u0432 Samsung Notes"** \u0432 \u043D\u0430\u0441\u0442\u0440\u043E\u0439\u043A\u0430\u0445 \u043F\u043B\u0430\u0433\u0438\u043D\u0430 (\u0432\u0438\u0434\u0438\u043C\u044B\u0439, \u043A\u043E\u0433\u0434\u0430 \u0432\u044B\u0431\u0440\u0430\u043D \u0441\u0442\u0438\u043B\u044C Samsung), PDF Versioning \u0431\u0443\u0434\u0435\u0442 \u0441\u0440\u0430\u0432\u043D\u0438\u0432\u0430\u0442\u044C \u0442\u043E\u043B\u044C\u043A\u043E \u043F\u0435\u0440\u0432\u044B\u0435 50 "\u0431\u0435\u0437\u043E\u043F\u0430\u0441\u043D\u044B\u0445" \u0441\u0438\u043C\u0432\u043E\u043B\u043E\u0432 \u0438\u043C\u0435\u043D \u0444\u0430\u0439\u043B\u043E\u0432, \u0433\u0430\u0440\u0430\u043D\u0442\u0438\u0440\u0443\u044F \u043F\u0440\u0430\u0432\u0438\u043B\u044C\u043D\u043E\u0435 \u043E\u0431\u043D\u0430\u0440\u0443\u0436\u0435\u043D\u0438\u0435 \u0438 \u0433\u0440\u0443\u043F\u043F\u0438\u0440\u043E\u0432\u043A\u0443 \u0432\u0430\u0440\u0438\u0430\u043D\u0442\u043E\u0432 \u0441 \u0434\u043B\u0438\u043D\u043D\u044B\u043C\u0438 \u0438\u043C\u0435\u043D\u0430\u043C\u0438.`
   },
   pt: {
     opening: "Abrindo com PDF versioning...",
@@ -1413,6 +1475,8 @@ Obsidian \u306B\u623B\u308A\u3001**\u30EC\u30A4\u30E4\u30FC\u30DC\u30BF\u30F3**\
     settingVersioningStyleDesc: "Escolha a conven\xE7\xE3o de nomenclatura usada para identificar diferentes vers\xF5es de um PDF. \n- Human: file_Version_1.pdf\n- Samsung: file_20260624_153505.pdf",
     versioningStyleSamsung: "Estilo Samsung (registro de data e hora duplo)",
     versioningStyleHuman: "Estilo Human (_Version_X)",
+    settingSamsungTruncateName: "Corre\xE7\xE3o de nomes longos do Samsung Notes",
+    settingSamsungTruncateDesc: "Compara apenas os primeiros 50 caracteres do nome do arquivo (o Samsung Notes trunca nomes base com mais de 50 caracteres antes de adicionar a carimbo de data/hora).",
     tutorialMarkdown: `# \u{1F4F1} Guia e Fluxo de trabalho de PDF versioning
 
 Este plugin permite uma conex\xE3o cont\xEDnua entre o **Obsidian** e qualquer editor de PDF externo. Voc\xEA pode anotar suas notas em PDF e gerenciar automaticamente as m\xFAltiplas vers\xF5es (variantes) criadas durante o seu fluxo de trabalho.
@@ -1496,7 +1560,13 @@ V\xE1 para as configura\xE7\xF5es do plugin em **Gest\xE3o de notas** para acess
 Varre todo o cofre em busca de vers\xF5es PDF duplicadas.
 * **Manter apenas a mais recente:** Exclui em massa todas as vers\xF5es mais antigas, atualizando automaticamente todas as incorpora\xE7\xF5es em suas notas para apontar para a c\xF3pia mais recente.
 * **Visualiza\xE7\xE3o:** Abre um modal de visualiza\xE7\xE3o compat\xEDvel com dispositivos m\xF3veis para inspecionar visualmente o conte\xFAdo do PDF.
-`
+
+
+---
+
+### \u{1F4F1} Nota de integra\xE7\xE3o de nomes de arquivos longos do Samsung Notes
+Ao exportar ou editar um PDF no Samsung Notes, se o nome do arquivo original exceder 50 caracteres, o Samsung Notes o truncar\xE1 automaticamente para 50 caracteres antes de anexar a carimbo de data/hora (ex. \`_260722_114213\`).
+Ao ativar a op\xE7\xE3o **"Corre\xE7\xE3o de nomes longos do Samsung Notes"** nas configura\xE7\xF5es do plugin (vis\xEDvel no estilo Samsung), o PDF Versioning comparar\xE1 apenas os primeiros 50 caracteres "seguros" dos nomes dos arquivos, garantindo que as variantes com nomes longos sejam detectadas e agrupadas corretamente.`
   }
 };
 function getLocale(lang) {

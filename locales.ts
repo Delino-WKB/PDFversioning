@@ -156,7 +156,13 @@ Go to the plugin settings under **Note Management** to access bulk cleanup tools
 Scans the entire vault for duplicate PDF versions.
 * **Keep only most recent:** Bulk-deletes all older versions, automatically updating all embeds in your notes to link to the latest copy.
 * **Preview:** Opens a mobile-compatible preview modal to visually inspect the PDF content.
-`
+
+
+---
+
+### 📱 Samsung Notes Long Filename Integration Note
+When exporting or editing a PDF in Samsung Notes, if the original filename exceeds 50 characters, Samsung Notes automatically truncates it to 50 characters before appending the timestamp (e.g. \`_260722_114213\`).
+By enabling the **"Samsung Notes Long Filename Fix"** option in the plugin settings (visible when style is Samsung), PDF Versioning will compare the first 50 "safe" characters of filenames, ensuring that variants with long names are properly detected and grouped.`
     },
     it: {
         opening: "Apertura con PDF versioning...\n\n---\n\n### 📱 Samsung Notes Long Filename Integration Note\nWhen exporting or editing a PDF in Samsung Notes, if the original filename exceeds 50 characters, Samsung Notes automatically truncates it to 50 characters before appending the timestamp (e.g. `_260722_114213`).\nBy enabling the **\"Samsung Notes Long Filename Fix\"** option in the plugin settings (visible when style is Samsung), PDF Versioning will compare the first 50 \"safe\" characters of filenames, ensuring that variants with long names are properly detected and grouped.",
@@ -303,7 +309,13 @@ Vai alle impostazioni del plugin in **Gestione delle note** per accedere agli st
 Scansiona l'intero vault alla ricerca di versioni PDF duplicate.
 * **Tieni solo più recente:** Elimina in blocco tutte le versioni precedenti, aggiornando automaticamente tutti gli elementi incorporati nelle note per collegarli alla copia più recente.
 * **Anteprima:** Apre un modal di anteprima compatibile con i dispositivi mobili per ispezionare visivamente il contenuto del PDF.
-`
+
+
+---
+
+### 📱 Note sull'integrazione con Samsung Notes e nomi file lunghi
+Quando esportate o modificate un PDF in Samsung Notes, se il nome del file originale supera i 50 caratteri, Samsung Notes lo troncherà automaticamente a 50 caratteri prima di aggiungere la data e l'ora (es. \`_260722_114213\`).
+Abilitando l'opzione **"Supporto nomi lunghi Samsung Notes"** nelle impostazioni del plugin (visibile quando lo stile è Samsung), PDF Versioning confronterà i primi 50 caratteri "sicuri" dei file, garantendo che anche le varianti dai nomi molto lunghi vengano riconosciute e raggruppate correttamente.`
     },
     fr: {
         opening: "Ouverture avec PDF versioning...\n\n---\n\n### 📱 Note sull'integrazione con Samsung Notes e nomi file lunghi\nQuando esportate o modificate un PDF in Samsung Notes, se il nome del file originale supera i 50 caratteri, Samsung Notes lo troncherà automaticamente a 50 caratteri prima di aggiungere la data e l'ora (es. `_260722_114213`).\nAbilitando l'opzione **\"Supporto nomi lunghi Samsung Notes\"** nelle impostazioni del plugin (visibile quando lo stile è Samsung), PDF Versioning confronterà i primi 50 caratteri \"sicuri\" dei file, garantendo che anche le varianti dai nomi molto lunghi vengano riconosciute e raggruppate correttamente.",
@@ -450,7 +462,13 @@ Accédez aux paramètres du plugin sous **Gestion des notes** pour accéder aux 
 Analyse l'ensemble du coffre à la recherche de versions de PDF doublons.
 * **Garder uniquement la plus récente :** Supprime en masse toutes les versions plus anciennes, mettant automatiquement à jour toutes les intégrations de vos notes pour pointer vers la dernière copie.
 * **Aperçu :** Ouvre une fenêtre d'aperçu compatible mobile pour inspecter visuellement le contenu du PDF.
-`
+
+
+---
+
+### 📱 Note sur l'intégration Samsung Notes et les noms de fichiers longs
+Lors de l'exportation ou de la modification d'un PDF dans Samsung Notes, si le nom d'origine dépasse 50 caractères, Samsung Notes le tronque automatiquement à 50 caractères avant d'ajouter l'horodatage (ex. \`_260722_114213\`).
+En activant l'option **"Correction des noms longs Samsung Notes"** dans les paramètres du plugin (visible en mode Samsung), PDF Versioning comparera les 50 premiers caractères des fichiers, garantissant la détection exacte des variantes aux noms très longs.`
     },
     de: {
         opening: "Öffnen mit PDF versioning...\n\n---\n\n### 📱 Note sur l'intégration Samsung Notes et les noms de fichiers longs\nLors de l'exportation ou de la modification d'un PDF dans Samsung Notes, si le nom d'origine dépasse 50 caractères, Samsung Notes le tronque automatiquement à 50 caractères avant d'ajouter l'horodatage (ex. `_260722_114213`).\nEn activant l'option **\"Correction des noms longs Samsung Notes\"** dans les paramètres du plugin (visible en mode Samsung), PDF Versioning comparera les 50 premiers caractères des fichiers, garantissant la détection exacte des variantes aux noms très longs.",
@@ -597,7 +615,13 @@ Gehen Sie in den Plugin-Einstellungen auf **Notizenverwaltung**, um auf die Bere
 Scannt den gesamten Vault nach doppelten PDF-Versionen.
 * **Nur die neueste behalten:** Löscht alle älteren Versionen im Stapelbetrieb und aktualisiert automatisch alle Einbettungen in Ihren Notizen, sodass sie auf die neueste Kopie verweisen.
 * **Vorschau:** Öffnet ein webtaugliches Vorschaufenster zur visuellen Überprüfung des PDF-Inhalts.
-`
+
+
+---
+
+### 📱 Hinweis zur Integration von Samsung Notes bei langen Dateinamen
+Beim Exportieren oder Bearbeiten einer PDF-Datei in Samsung Notes kürzt Samsung Notes Dateinamen automatisch auf 50 Zeichen, wenn der Originalname 50 Zeichen überschreitet, bevor der Zeitstempel (z. B. \`_260722_114213\`) angehängt wird.
+Durch Aktivieren der Option **"Korrektur für lange Dateinamen in Samsung Notes"** in den Einstellungen (sichtbar im Samsung-Stil) vergleicht PDF Versioning nur die ersten 50 "sicheren" Zeichen der Dateinamen, sodass auch Varianten mit sehr langen Namen korrekt erkannt und gruppiert werden.`
     },
     es: {
         opening: "Abriendo con PDF versioning...\n\n---\n\n### 📱 Hinweis zur Integration von Samsung Notes bei langen Dateinamen\nBeim Exportieren oder Bearbeiten einer PDF-Datei in Samsung Notes kürzt Samsung Notes Dateinamen automatisch auf 50 Zeichen, wenn der Originalname 50 Zeichen überschreitet, bevor der Zeitstempel (z. B. `_260722_114213`) angehängt wird.\nDurch Aktivieren der Option **\"Korrektur für lange Dateinamen in Samsung Notes\"** in den Einstellungen (sichtbar im Samsung-Stil) vergleicht PDF Versioning nur die ersten 50 \"sicheren\" Zeichen der Dateinamen, sodass auch Varianten mit sehr langen Namen korrekt erkannt und gruppiert werden.",
@@ -744,7 +768,13 @@ Vaya a la configuración del complemento en **Gestión de notas** para acceder a
 Escanea todo el almacén en busca de versiones de PDF duplicadas.
 * **Conservar solo la más reciente:** Elimina de forma masiva todas las versiones anteriores, actualizando automáticamente todas las incrustaciones de sus notas para vincularlas a la copia más reciente.
 * **Vista previa:** Abre un modal de vista previa compatible con dispositivos móviles para inspeccionar visualmente el contenido del PDF.
-`
+
+
+---
+
+### 📱 Nota de integración con Samsung Notes y nombres de archivo largos
+Al exportar o editar un PDF en Samsung Notes, si el nombre original supera los 50 caracteres, Samsung Notes lo trunca automáticamente a 50 caracteres antes de añadir la marca de tiempo (ej. \`_260722_114213\`).
+Al activar la opción **"Corrección de nombres largos de Samsung Notes"** en la configuración del complemento (visible en estilo Samsung), PDF Versioning comparará los primeros 50 caracteres "seguros" de los archivos, garantizando que las variantes con nombres largos se detecten y agrupen correctamente.`
     },
     pl: {
         opening: "Otwieranie z PDF versioning...\n\n---\n\n### 📱 Nota de integración con Samsung Notes y nombres de archivo largos\nAl exportar o editar un PDF en Samsung Notes, si el nombre original supera los 50 caracteres, Samsung Notes lo trunca automáticamente a 50 caracteres antes de añadir la marca de tiempo (ej. `_260722_114213`).\nAl activar la opción **\"Corrección de nombres largos de Samsung Notes\"** en la configuración del complemento (visible en estilo Samsung), PDF Versioning comparará los primeros 50 caracteres \"seguros\" de los archivos, garantizando que las variantes con nombres largos se detecten y agrupen correctamente.",
@@ -806,6 +836,8 @@ Escanea todo el almacén en busca de versiones de PDF duplicadas.
         settingVersioningStyleDesc: "Wybierz konwencję nazewnictwa używaną do identyfikacji różnych wersji pliku PDF. \n- Human: file_Version_1.pdf\n- Samsung: file_20260624_153505.pdf",
         versioningStyleSamsung: "Styl Samsung (podwójny znacznik czasu)",
         versioningStyleHuman: "Styl Human (_Version_X)",
+        settingSamsungTruncateName: "Poprawka długich nazw plików Samsung Notes",
+        settingSamsungTruncateDesc: "Porównuj tylko pierwsze 50 znaków nazwy pliku (Samsung Notes skraca nazwy plików dłuższe niż 50 znaków przed dodaniem znacznika czasu).",
         tutorialMarkdown: `# 📱 PDF versioning Instrukcja i przepływ pracy
 
 Ta wtyczka umożliwia bezproblemowe połączenie między **Obsidian** a dowolnym zewnętrznym edytorem PDF. Możesz dodawać adnotacje do swoich notatek PDF i automatycznie zarządzać wieloma wersjami (wariantami) tworzonymi podczas pracy.
@@ -889,7 +921,13 @@ Przejdź do ustawień wtyczki w sekcji **Zarządzanie notatkami**, aby uzyskać 
 Skanuje cały skarbiec w poszukiwaniu zduplikowanych wersji plików PDF.
 * **Zachowaj tylko najnowsze:** Usuwa zbiorczo wszystkie starsze wersje, automatycznie aktualizując wszystkie osadzenia w notatkach, aby prowadziły do najnowszej kopii.
 * **Podgląd:** Otwiera kompatybilne z urządzeniami mobilnymi okno podglądu w celu wizualnej oceny zawartości pliku PDF.
-`
+
+
+---
+
+### 📱 Uwaga dotycząca integracji długich nazw plików Samsung Notes
+Podczas eksportowania lub edycji pliku PDF w Samsung Notes, jeśli oryginalna nazwa pliku przekracza 50 znaków, Samsung Notes automatycznie skraca ją do 50 znaków przed dodaniem znacznika czasu (np. \`_260722_114213\`).
+Włączając opcję **"Poprawka długich nazw plików Samsung Notes"** w ustawieniach wtyczki (widoczną, gdy stylem jest Samsung), PDF Versioning porówna tylko pierwsze 50 "bezpiecznych" znaków nazw plików, zapewniając prawidłowe wykrywanie i grupowanie wariantów o długich nazwach.`
     },
     zh: {
         opening: "正在使用 PDF versioning 打开...",
@@ -951,6 +989,8 @@ Skanuje cały skarbiec w poszukiwaniu zduplikowanych wersji plików PDF.
         settingVersioningStyleDesc: "选择用于识别 PDF 不同版本的命名规范。\n- Human: file_Version_1.pdf\n- Samsung: file_20260624_153505.pdf",
         versioningStyleSamsung: "Samsung 样式（双时间戳）",
         versioningStyleHuman: "Human 样式（_Version_X）",
+        settingSamsungTruncateName: "三星笔记长文件名修复",
+        settingSamsungTruncateDesc: "仅比较文件名的前50个字符（三星笔记在添加时间戳之前会将超过50个字符的基础文件名截断）。",
         tutorialMarkdown: `# 📱 PDF versioning 指南与工作流
 
 此插件可在 **Obsidian** 与任何外部 PDF 编辑器之间实现无缝连接。您可以为 PDF 添加批注，并自动管理工作流中产生的多个版本（变体）。
@@ -1034,7 +1074,13 @@ Skanuje cały skarbiec w poszukiwaniu zduplikowanych wersji plików PDF.
 扫描整个保险箱以查找重复的 PDF 版本。
 * **仅保留最新版本：** 批量删除所有旧版本，并自动将笔记中的所有嵌入更新为链接到最新副本。
 * **预览：** 打开适配移动端的预览弹窗，直观检查 PDF 内容。
-`
+
+
+---
+
+### 📱 三星笔记长文件名集成说明
+在三星笔记中导出或编辑PDF时，如果原始文件名超过50个字符，三星笔记会在添加时间戳（例如 \`_260722_114213\`）之前自动将其截断为50个字符。
+在插件设置中启用 **“三星笔记长文件名修复”** 选项（在模式为三星时可见），PDF Versioning 将仅比较文件名的前50个“安全”字符，确保完美识别并分组长文件名的变体。`
     },
     ja: {
         opening: "PDF versioning で開いています...",
@@ -1096,6 +1142,8 @@ Skanuje cały skarbiec w poszukiwaniu zduplikowanych wersji plików PDF.
         settingVersioningStyleDesc: "PDFの異なるバージョンを識別するために使用する命名規則を選択します。\n- Human: file_Version_1.pdf\n- Samsung: file_20260624_153505.pdf",
         versioningStyleSamsung: "Samsungスタイル（ダブルタイムスタンプ）",
         versioningStyleHuman: "Humanスタイル（_Version_X）",
+        settingSamsungTruncateName: "Samsung Notes 長いファイル名の修正",
+        settingSamsungTruncateDesc: "ファイル名の最初の50文字のみを比較します（Samsung Notesはタイムスタンプを追加する前に50文字を超える基本ファイル名を切断します）。",
         tutorialMarkdown: `# 📱 PDF versioning ガイド ＆ ワークフロー
 
 このプラグインは、**Obsidian** と外部の PDF エディタをシームレスに接続します。PDF 形式のノートに注釈を書き込み、ワークフロー中に作成された複数のバージョン（バリアント）を自動的に管理できます。
@@ -1179,7 +1227,13 @@ Obsidian に戻り、**レイヤーボタン**をクリックして、異なる�
 フォルダ全体をスキャンして重複する PDF バージョンを見つけます。
 * **最新のみ保持：** 古いバージョンを一括削除し、ノート内のすべての埋め込みを自動的に最新のコピーに更新します。
 * **プレビュー：** モバイル対応のプレビューウィンドウを開いて、PDF の内容を目視で確認します。
-`
+
+
+---
+
+### 📱 Samsung Notes 長いファイル名統合ノート
+Samsung NotesでPDFをエクスポートまたは編集する際、元のファイル名が50文字を超える場合、Samsung Notesはタイムスタンプ（例: \`_260722_114213\`）を追加する前に自動的に50文字に切り詰めます。
+プラグイン設定で **「Samsung Notes 長いファイル名の修正」** オプション（スタイルがSamsungの場合に表示）を有効にすると、PDF Versioningはファイル名の最初の50文字の「安全な」文字のみを比較し、長い名前のバリアントを正しく認識してグループ化します。`
     },
     ru: {
         opening: "Открытие через PDF versioning...",
@@ -1241,6 +1295,8 @@ Obsidian に戻り、**レイヤーボタン**をクリックして、異なる�
         settingVersioningStyleDesc: "Выберите соглашение о наименовании, используемое для идентификации различных версий PDF-файла. \n- Human: file_Version_1.pdf\n- Samsung: file_20260624_153505.pdf",
         versioningStyleSamsung: "Стиль Samsung (двойная отметка времени)",
         versioningStyleHuman: "Стиль Human (_Version_X)",
+        settingSamsungTruncateName: "Исправление длинных имен файлов Samsung Notes",
+        settingSamsungTruncateDesc: "Сравнивает только первые 50 символов имени файла (Samsung Notes обрезает имя файла длиннее 50 символов перед добавлением метки времени).",
         tutorialMarkdown: `# 📱 Руководство и рабочий процесс PDF versioning
 
 Этот плагин обеспечивает бесшовное соединение между **Obsidian** и любым внешним редактором PDF. Вы можете аннотировать свои PDF-заметки и автоматически управлять несколькими версиями (вариантами), созданными в ходе рабочего процесса.
@@ -1324,7 +1380,13 @@ Obsidian に戻り、**レイヤーボタン**をクリックして、異なる�
 Сканирует всё хранилище на наличие дубликатов версий PDF.
 * **Сохранить только последнюю:** Массово удаляет все более старые версии, автоматически обновляя все ссылки во встроенных файлах на актуальную копию.
 * **Предпросмотр:** Открывает окно предварительного просмотра для визуального контроля содержимого PDF.
-`
+
+
+---
+
+### 📱 Примечание по интеграции длинных имен файлов Samsung Notes
+При экспорте или редактировании PDF в Samsung Notes, если исходное имя файла превышает 50 символов, Samsung Notes автоматически обрезает его до 50 символов перед добавлением метки времени (например, \`_260722_114213\`).
+Включив параметр **"Исправление длинных имен файлов Samsung Notes"** в настройках плагина (видимый, когда выбран стиль Samsung), PDF Versioning будет сравнивать только первые 50 "безопасных" символов имен файлов, гарантируя правильное обнаружение и группировку вариантов с длинными именами.`
     },
     pt: {
         opening: "Abrindo com PDF versioning...",
@@ -1386,6 +1448,8 @@ Obsidian に戻り、**レイヤーボタン**をクリックして、異なる�
         settingVersioningStyleDesc: "Escolha a convenção de nomenclatura usada para identificar diferentes versões de um PDF. \n- Human: file_Version_1.pdf\n- Samsung: file_20260624_153505.pdf",
         versioningStyleSamsung: "Estilo Samsung (registro de data e hora duplo)",
         versioningStyleHuman: "Estilo Human (_Version_X)",
+        settingSamsungTruncateName: "Correção de nomes longos do Samsung Notes",
+        settingSamsungTruncateDesc: "Compara apenas os primeiros 50 caracteres do nome do arquivo (o Samsung Notes trunca nomes base com mais de 50 caracteres antes de adicionar a carimbo de data/hora).",
         tutorialMarkdown: `# 📱 Guia e Fluxo de trabalho de PDF versioning
 
 Este plugin permite uma conexão contínua entre o **Obsidian** e qualquer editor de PDF externo. Você pode anotar suas notas em PDF e gerenciar automaticamente as múltiplas versões (variantes) criadas durante o seu fluxo de trabalho.
@@ -1469,7 +1533,13 @@ Vá para as configurações do plugin em **Gestão de notas** para acessar as fe
 Varre todo o cofre em busca de versões PDF duplicadas.
 * **Manter apenas a mais recente:** Exclui em massa todas as versões mais antigas, atualizando automaticamente todas as incorporações em suas notas para apontar para a cópia mais recente.
 * **Visualização:** Abre um modal de visualização compatível com dispositivos móveis para inspecionar visualmente o conteúdo do PDF.
-`
+
+
+---
+
+### 📱 Nota de integração de nomes de arquivos longos do Samsung Notes
+Ao exportar ou editar um PDF no Samsung Notes, se o nome do arquivo original exceder 50 caracteres, o Samsung Notes o truncará automaticamente para 50 caracteres antes de anexar a carimbo de data/hora (ex. \`_260722_114213\`).
+Ao ativar a opção **"Correção de nomes longos do Samsung Notes"** nas configurações do plugin (visível no estilo Samsung), o PDF Versioning comparará apenas os primeiros 50 caracteres "seguros" dos nomes dos arquivos, garantindo que as variantes com nomes longos sejam detectadas e agrupadas corretamente.`
     },
 };
 
