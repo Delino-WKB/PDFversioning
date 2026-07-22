@@ -1,6 +1,6 @@
 {
   "name": "pdf-versioning",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Integration with external tools for PDF annotations and embedded views with full versioning support.",
   "main": "main.js",
   "scripts": {
