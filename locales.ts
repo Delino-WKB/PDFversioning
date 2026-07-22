@@ -8,7 +8,7 @@ export type LocaleKey =
     | 'noMultiPdfFound' | 'keepNewestOnly' | 'confirmKeepNewest' | 'previewBtn' | 'keepOnlyThis' | 'confirmKeepThis'
     | 'deleteBtn' | 'previewTitle' | 'confirmTitle' | 'cancelBtn' | 'deleteConflictTitle' | 'noteViewedInFiles'
     | 'whatToDo' | 'deleteEverywhere' | 'replaceWithVersion' | 'tutorialCreatedTitle' | 'tutorialCreatedDesc' | 'okBtn'
-    | 'unsupportedDevice' | 'tutorialMarkdown' | 'settingVersioningStyleName' | 'settingVersioningStyleDesc' | 'versioningStyleSamsung' | 'versioningStyleHuman';
+    | 'unsupportedDevice' | 'tutorialMarkdown' | 'settingVersioningStyleName' | 'settingVersioningStyleDesc' | 'versioningStyleSamsung' | 'versioningStyleHuman' | 'settingSamsungTruncateName' | 'settingSamsungTruncateDesc';
 
 export const locales: Record<string, Record<LocaleKey, string>> = {
     en: {
@@ -71,6 +71,8 @@ export const locales: Record<string, Record<LocaleKey, string>> = {
         settingVersioningStyleDesc: "Choose the naming convention used to identify different versions of a PDF. \n- Human: file_Version_1.pdf\n- Samsung: file_20260624_153505.pdf",
         versioningStyleSamsung: "Samsung Style (double timestamp)",
         versioningStyleHuman: "Human Style (_Version_X)",
+        settingSamsungTruncateName: "Samsung Notes Long Filename Fix",
+        settingSamsungTruncateDesc: "Compare only the first 50 characters of filenames (Samsung Notes truncates base filenames longer than 50 characters before appending the timestamp).",
         tutorialMarkdown: `# 📱 PDF versioning Guide & Workflow
 
 This plugin enables a seamless connection between **Obsidian** and any external PDF editor. You can annotate your PDF notes and automatically manage the multiple versions (variants) created during your workflow.
@@ -157,7 +159,7 @@ Scans the entire vault for duplicate PDF versions.
 `
     },
     it: {
-        opening: "Apertura con PDF versioning...",
+        opening: "Apertura con PDF versioning...\n\n---\n\n### 📱 Samsung Notes Long Filename Integration Note\nWhen exporting or editing a PDF in Samsung Notes, if the original filename exceeds 50 characters, Samsung Notes automatically truncates it to 50 characters before appending the timestamp (e.g. `_260722_114213`).\nBy enabling the **\"Samsung Notes Long Filename Fix\"** option in the plugin settings (visible when style is Samsung), PDF Versioning will compare the first 50 \"safe\" characters of filenames, ensuring that variants with long names are properly detected and grouped.",
         errorOpeningPdf: "Errore nell'apertura del PDF: ",
         warningNotRecent: "Attenzione: Stai per modificare una versione che non è la più recente (la più recente è del {0}). Vuoi procedere comunque?",
         original: "Originale",
@@ -216,6 +218,8 @@ Scans the entire vault for duplicate PDF versions.
         settingVersioningStyleDesc: "Scegli la convenzione dei nomi usata per identificare diverse versioni di un PDF. \n- Human: file_Version_1.pdf\n- Samsung: file_20260624_153505.pdf",
         versioningStyleSamsung: "Stile Samsung (doppio timestamp)",
         versioningStyleHuman: "Stile Human (_Version_X)",
+        settingSamsungTruncateName: "Supporto nomi lunghi Samsung Notes",
+        settingSamsungTruncateDesc: "Ignora i caratteri oltre i primi 50 per confrontare le varianti (Samsung Notes tronca i nomi dei PDF che superano i 50 caratteri prima di aggiungere la data e l'ora).",
         tutorialMarkdown: `# 📱 Guida e Flusso di lavoro di PDF versioning
 
 Questo plugin consente una connessione fluida tra **Obsidian** e qualsiasi editor PDF esterno. Puoi annotare le tue note PDF e gestire automaticamente le versioni multiple (varianti) create durante il tuo flusso di lavoro.
@@ -302,7 +306,7 @@ Scansiona l'intero vault alla ricerca di versioni PDF duplicate.
 `
     },
     fr: {
-        opening: "Ouverture avec PDF versioning...",
+        opening: "Ouverture avec PDF versioning...\n\n---\n\n### 📱 Note sull'integrazione con Samsung Notes e nomi file lunghi\nQuando esportate o modificate un PDF in Samsung Notes, se il nome del file originale supera i 50 caratteri, Samsung Notes lo troncherà automaticamente a 50 caratteri prima di aggiungere la data e l'ora (es. `_260722_114213`).\nAbilitando l'opzione **\"Supporto nomi lunghi Samsung Notes\"** nelle impostazioni del plugin (visibile quando lo stile è Samsung), PDF Versioning confronterà i primi 50 caratteri \"sicuri\" dei file, garantendo che anche le varianti dai nomi molto lunghi vengano riconosciute e raggruppate correttamente.",
         errorOpeningPdf: "Erreur lors de l'ouverture du PDF : ",
         warningNotRecent: "Attention : Vous êtes sur le point de modifier une version qui n'est pas la plus récente (la plus récente est du {0}). Voulez-vous continuer ?",
         original: "Original",
@@ -361,6 +365,8 @@ Scansiona l'intero vault alla ricerca di versioni PDF duplicate.
         settingVersioningStyleDesc: "Choisissez la convention de nommage utilisée pour identifier les différentes versions d'un PDF. \n- Human : file_Version_1.pdf\n- Samsung : file_20260624_153505.pdf",
         versioningStyleSamsung: "Style Samsung (double horodatage)",
         versioningStyleHuman: "Style Human (_Version_X)",
+        settingSamsungTruncateName: "Correction des noms longs Samsung Notes",
+        settingSamsungTruncateDesc: "Compare uniquement les 50 premiers caractères des fichiers (Samsung Notes tronque les noms de base dépassant 50 caractères avant d'ajouter l'horodatage).",
         tutorialMarkdown: `# 📱 Guide et flux de travail de PDF versioning
 
 Ce plugin permet une connexion fluide entre **Obsidian** et tout éditeur PDF externe. Vous pouvez annoter vos notes PDF et gérer automatiquement les multiples versions (variantes) créées au cours de votre flux de travail.
@@ -447,7 +453,7 @@ Analyse l'ensemble du coffre à la recherche de versions de PDF doublons.
 `
     },
     de: {
-        opening: "Öffnen mit PDF versioning...",
+        opening: "Öffnen mit PDF versioning...\n\n---\n\n### 📱 Note sur l'intégration Samsung Notes et les noms de fichiers longs\nLors de l'exportation ou de la modification d'un PDF dans Samsung Notes, si le nom d'origine dépasse 50 caractères, Samsung Notes le tronque automatiquement à 50 caractères avant d'ajouter l'horodatage (ex. `_260722_114213`).\nEn activant l'option **\"Correction des noms longs Samsung Notes\"** dans les paramètres du plugin (visible en mode Samsung), PDF Versioning comparera les 50 premiers caractères des fichiers, garantissant la détection exacte des variantes aux noms très longs.",
         errorOpeningPdf: "Fehler beim Öffnen der PDF: ",
         warningNotRecent: "Achtung: Sie bearbeiten eine Version, die nicht die aktuellste ist (die aktuellste ist vom {0}). Möchten Sie trotzdem fortfahren?",
         original: "Original",
@@ -506,6 +512,8 @@ Analyse l'ensemble du coffre à la recherche de versions de PDF doublons.
         settingVersioningStyleDesc: "Wählen Sie die Namenskonvention zur Identifizierung verschiedener Versionen einer PDF-Datei. \n- Human: file_Version_1.pdf\n- Samsung: file_20260624_153505.pdf",
         versioningStyleSamsung: "Samsung-Stil (doppelter Zeitstempel)",
         versioningStyleHuman: "Human-Stil (_Version_X)",
+        settingSamsungTruncateName: "Korrektur für lange Dateinamen in Samsung Notes",
+        settingSamsungTruncateDesc: "Vergleicht nur die ersten 50 Zeichen der Dateinamen (Samsung Notes kürzt Dateinamen über 50 Zeichen, bevor der Zeitstempel angehängt wird).",
         tutorialMarkdown: `# 📱 PDF versioning Anleitung & Arbeitsablauf
 
 Dieses Plugin ermöglicht eine nahtlose Verbindung zwischen **Obsidian** und jedem externen PDF-Editor. Sie können Ihre PDF-Notizen mit Anmerkungen versehen und die verschiedenen Versionen (Varianten), die während Ihres Arbeitsablaufs erstellt werden, automatisch verwalten.
@@ -592,7 +600,7 @@ Scannt den gesamten Vault nach doppelten PDF-Versionen.
 `
     },
     es: {
-        opening: "Abriendo con PDF versioning...",
+        opening: "Abriendo con PDF versioning...\n\n---\n\n### 📱 Hinweis zur Integration von Samsung Notes bei langen Dateinamen\nBeim Exportieren oder Bearbeiten einer PDF-Datei in Samsung Notes kürzt Samsung Notes Dateinamen automatisch auf 50 Zeichen, wenn der Originalname 50 Zeichen überschreitet, bevor der Zeitstempel (z. B. `_260722_114213`) angehängt wird.\nDurch Aktivieren der Option **\"Korrektur für lange Dateinamen in Samsung Notes\"** in den Einstellungen (sichtbar im Samsung-Stil) vergleicht PDF Versioning nur die ersten 50 \"sicheren\" Zeichen der Dateinamen, sodass auch Varianten mit sehr langen Namen korrekt erkannt und gruppiert werden.",
         errorOpeningPdf: "Error al abrir el PDF: ",
         warningNotRecent: "Advertencia: Estás a punto de modificar una versión que no es la más reciente (la más reciente es del {0}). ¿Quieres continuar?",
         original: "Original",
@@ -651,6 +659,8 @@ Scannt den gesamten Vault nach doppelten PDF-Versionen.
         settingVersioningStyleDesc: "Elija la convención de nomenclatura utilizada para identificar las diferentes versiones de un PDF. \n- Human: file_Version_1.pdf\n- Samsung: file_20260624_153505.pdf",
         versioningStyleSamsung: "Estilo Samsung (doble marca de tiempo)",
         versioningStyleHuman: "Estilo Human (_Version_X)",
+        settingSamsungTruncateName: "Corrección de nombres largos de Samsung Notes",
+        settingSamsungTruncateDesc: "Compara solo los primeros 50 caracteres del nombre del archivo (Samsung Notes trunca los nombres de base de más de 50 caracteres antes de añadir la marca de tiempo).",
         tutorialMarkdown: `# 📱 Guía y flujo de trabajo de PDF versioning
 
 Este complemento permite una conexión fluida entre **Obsidian** y cualquier editor de PDF externo. Puede anotar sus notas en PDF y administrar automáticamente las múltiples versiones (variantes) creadas durante su flujo de trabajo.
@@ -737,7 +747,7 @@ Escanea todo el almacén en busca de versiones de PDF duplicadas.
 `
     },
     pl: {
-        opening: "Otwieranie z PDF versioning...",
+        opening: "Otwieranie z PDF versioning...\n\n---\n\n### 📱 Nota de integración con Samsung Notes y nombres de archivo largos\nAl exportar o editar un PDF en Samsung Notes, si el nombre original supera los 50 caracteres, Samsung Notes lo trunca automáticamente a 50 caracteres antes de añadir la marca de tiempo (ej. `_260722_114213`).\nAl activar la opción **\"Corrección de nombres largos de Samsung Notes\"** en la configuración del complemento (visible en estilo Samsung), PDF Versioning comparará los primeros 50 caracteres \"seguros\" de los archivos, garantizando que las variantes con nombres largos se detecten y agrupen correctamente.",
         errorOpeningPdf: "Błąd podczas otwierania PDF: ",
         warningNotRecent: "Ostrzeżenie: Próbujesz edytować wersję, która nie jest najnowsza (najnowsza jest z {0}). Czy chcesz kontynuować?",
         original: "Oryginał",

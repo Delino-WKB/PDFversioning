@@ -5,11 +5,13 @@ import { TUTORIAL_ASSETS } from './tutorialAssets';
 export interface PDFVersioningSettings {
     language: string;
     versioningStyle: 'samsung' | 'human';
+    samsungTruncateFix: boolean;
 }
 
 const DEFAULT_SETTINGS: PDFVersioningSettings = {
     language: 'it',
-    versioningStyle: 'human'
+    versioningStyle: 'human',
+    samsungTruncateFix: true
 }
 
 export default class PDFVersioningPlugin extends Plugin {
@@ -315,9 +317,17 @@ export default class PDFVersioningPlugin extends Plugin {
         const baseName = this.getBaseName(file.basename);
         const pdfFiles = this.app.vault.getFiles().filter(f => f.extension === 'pdf');
         
+        const isSamsungFix = this.settings.versioningStyle === 'samsung' && this.settings.samsungTruncateFix;
+
         const variants = pdfFiles.filter(f => {
             const fBase = this.getBaseName(f.basename);
-            return fBase === baseName;
+            if (fBase === baseName) return true;
+            if (isSamsungFix) {
+                const targetCut = baseName.length > 50 ? baseName.substring(0, 50) : baseName;
+                const fCut = fBase.length > 50 ? fBase.substring(0, 50) : fBase;
+                return targetCut === fCut;
+            }
+            return false;
         });
 
         variants.sort((a, b) => {
@@ -780,15 +790,28 @@ export default class PDFVersioningPlugin extends Plugin {
     getGroupedVariants(): Map<string, { baseFile: TFile | null, variants: TFile[] }> {
         const pdfFiles = this.app.vault.getFiles().filter(f => f.extension === 'pdf');
         const groups = new Map<string, { baseFile: TFile | null, variants: TFile[] }>();
+        const isSamsungFix = this.settings.versioningStyle === 'samsung' && this.settings.samsungTruncateFix;
         
         for (const file of pdfFiles) {
-            const baseName = this.getBaseName(file.basename);
-            
-            if (!groups.has(baseName)) {
-                groups.set(baseName, { baseFile: null, variants: [] });
+            const rawBase = this.getBaseName(file.basename);
+            let matchingKey = rawBase;
+
+            if (isSamsungFix) {
+                const rawCut = rawBase.length > 50 ? rawBase.substring(0, 50) : rawBase;
+                for (const existingKey of groups.keys()) {
+                    const existingCut = existingKey.length > 50 ? existingKey.substring(0, 50) : existingKey;
+                    if (existingCut === rawCut) {
+                        matchingKey = existingKey;
+                        break;
+                    }
+                }
+            }
+
+            if (!groups.has(matchingKey)) {
+                groups.set(matchingKey, { baseFile: null, variants: [] });
             }
             
-            const group = groups.get(baseName)!;
+            const group = groups.get(matchingKey)!;
             if (!this.hasSuffix(file.basename)) {
                 group.baseFile = file;
             }
@@ -880,8 +903,26 @@ class PDFVersioningSettingTab extends PluginSettingTab {
                 .setValue(this.plugin.settings.versioningStyle)
                 .onChange((value: 'human' | 'samsung') => {
                     this.plugin.settings.versioningStyle = value;
-                    void this.plugin.saveSettings();
+                    void (async () => {
+                        await this.plugin.saveSettings();
+                        this.display();
+                    })();
                 }));
+
+        if (this.plugin.settings.versioningStyle === 'samsung') {
+            new Setting(containerEl)
+                .setName(this.plugin.t('settingSamsungTruncateName'))
+                .setDesc(this.plugin.t('settingSamsungTruncateDesc'))
+                .addToggle(toggle => toggle
+                    .setValue(this.plugin.settings.samsungTruncateFix)
+                    .onChange((value) => {
+                        this.plugin.settings.samsungTruncateFix = value;
+                        void (async () => {
+                            await this.plugin.saveSettings();
+                            this.groupedVariants = this.plugin.getGroupedVariants();
+                        })();
+                    }));
+        }
 
         new Setting(containerEl)
             .setName(this.plugin.t('settingTutorialName'))
