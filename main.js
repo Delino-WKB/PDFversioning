@@ -1751,7 +1751,7 @@ var PDFVersioningPlugin = class extends import_obsidian.Plugin {
     }
   }
   getSuffixRegex() {
-    return /(_Version_\d+|_(\d{6})_(\d{6}))$/;
+    return this.settings.versioningStyle === "human" ? /_Version_(\d+)$/ : /_(\d{6})_(\d{6})$/;
   }
   getBaseName(fileName) {
     return fileName.replace(this.getSuffixRegex(), "");
@@ -1760,14 +1760,19 @@ var PDFVersioningPlugin = class extends import_obsidian.Plugin {
     return this.getSuffixRegex().test(fileName);
   }
   formatVariantLabel(file) {
-    const matchHuman = file.basename.match(/_Version_(\d+)$/);
-    if (matchHuman) {
-      return `Version ${matchHuman[1]}`;
-    }
-    const matchSamsung = file.basename.match(/_(\d{2})(\d{2})(\d{2})_(\d{2})(\d{2})(\d{2})$/);
-    if (matchSamsung) {
-      const [, yy, mm, dd, hh, min, ss] = matchSamsung;
-      return `${dd}/${mm}/20${yy} ${hh}:${min}:${ss}`;
+    if (!this.hasSuffix(file.basename))
+      return file.basename;
+    if (this.settings.versioningStyle === "human") {
+      const match = file.basename.match(/_Version_(\d+)$/);
+      if (match) {
+        return `Version ${match[1]}`;
+      }
+    } else {
+      const match = file.basename.match(/_(\d{2})(\d{2})(\d{2})_(\d{2})(\d{2})(\d{2})$/);
+      if (match) {
+        const [, yy, mm, dd, hh, min, ss] = match;
+        return `${dd}/${mm}/20${yy} ${hh}:${min}:${ss}`;
+      }
     }
     return file.basename;
   }
@@ -1785,10 +1790,12 @@ var PDFVersioningPlugin = class extends import_obsidian.Plugin {
         return -1;
       if (aHasSuffix && !bHasSuffix)
         return 1;
-      const matchHumanA = a.basename.match(/_Version_(\d+)$/);
-      const matchHumanB = b.basename.match(/_Version_(\d+)$/);
-      if (matchHumanA && matchHumanB) {
-        return parseInt(matchHumanA[1]) - parseInt(matchHumanB[1]);
+      if (this.settings.versioningStyle === "human") {
+        const matchA = a.basename.match(/_Version_(\d+)$/);
+        const matchB = b.basename.match(/_Version_(\d+)$/);
+        if (matchA && matchB) {
+          return parseInt(matchA[1]) - parseInt(matchB[1]);
+        }
       }
       return a.basename.localeCompare(b.basename);
     });
