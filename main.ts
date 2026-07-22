@@ -237,9 +237,12 @@ export default class PDFVersioningPlugin extends Plugin {
             };
 
             if (newest && newest.path !== file.path) {
+                let newestLabel = '';
+                newestLabel = this.formatVariantLabel(newest);
+
                 new ConfirmationModal(
                     this.app,
-                    this.t('warningNotRecent'),
+                    this.t('warningNotRecent', newestLabel),
                     () => {
                         openApp();
                     },

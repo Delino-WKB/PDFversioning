@@ -35,7 +35,7 @@ var locales = {
   en: {
     opening: "Opening with PDF versioning...",
     errorOpeningPdf: "Error opening PDF: ",
-    warningNotRecent: "You are about to edit a version that is not the most recent.",
+    warningNotRecent: "Warning: You are about to edit a version that is not the most recent (the most recent is from {0}). Do you want to proceed anyway?",
     original: "Original",
     originalBase: "Original (Base)",
     proceed: "Proceed",
@@ -186,9 +186,9 @@ When exporting or editing a PDF in Samsung Notes, if the original filename excee
 By enabling the **"Samsung Notes Long Filename Fix"** option in the plugin settings (visible when style is Samsung), PDF Versioning will compare the first 50 "safe" characters of filenames, ensuring that variants with long names are properly detected and grouped.`
   },
   it: {
-    opening: 'Apertura con PDF versioning...\n\n---\n\n### \u{1F4F1} Samsung Notes Long Filename Integration Note\nWhen exporting or editing a PDF in Samsung Notes, if the original filename exceeds 50 characters, Samsung Notes automatically truncates it to 50 characters before appending the timestamp (e.g. `_260722_114213`).\nBy enabling the **"Samsung Notes Long Filename Fix"** option in the plugin settings (visible when style is Samsung), PDF Versioning will compare the first 50 "safe" characters of filenames, ensuring that variants with long names are properly detected and grouped.',
+    opening: "Apertura in corso con PDF versioning...",
     errorOpeningPdf: "Errore nell'apertura del PDF: ",
-    warningNotRecent: "Stai per modificare una versione che non \xE8 la pi\xF9 recente.",
+    warningNotRecent: "Attenzione: Stai per modificare una versione che non \xE8 la pi\xF9 recente (la pi\xF9 recente \xE8 del {0}). Vuoi procedere comunque?",
     original: "Originale",
     originalBase: "Originale (Base)",
     proceed: "Procedi",
@@ -339,15 +339,9 @@ Quando esportate o modificate un PDF in Samsung Notes, se il nome del file origi
 Abilitando l'opzione **"Supporto nomi lunghi Samsung Notes"** nelle impostazioni del plugin (visibile quando lo stile \xE8 Samsung), PDF Versioning confronter\xE0 i primi 50 caratteri "sicuri" dei file, garantendo che anche le varianti dai nomi molto lunghi vengano riconosciute e raggruppate correttamente.`
   },
   fr: {
-    opening: `Ouverture avec PDF versioning...
-
----
-
-### \u{1F4F1} Note sull'integrazione con Samsung Notes e nomi file lunghi
-Quando esportate o modificate un PDF in Samsung Notes, se il nome del file originale supera i 50 caratteri, Samsung Notes lo troncher\xE0 automaticamente a 50 caratteri prima di aggiungere la data e l'ora (es. \`_260722_114213\`).
-Abilitando l'opzione **"Supporto nomi lunghi Samsung Notes"** nelle impostazioni del plugin (visibile quando lo stile \xE8 Samsung), PDF Versioning confronter\xE0 i primi 50 caratteri "sicuri" dei file, garantendo che anche le varianti dai nomi molto lunghi vengano riconosciute e raggruppate correttamente.`,
+    opening: "Ouverture avec PDF versioning...",
     errorOpeningPdf: "Erreur lors de l'ouverture du PDF : ",
-    warningNotRecent: "Vous \xEAtes sur le point de modifier une version qui n'est pas la plus r\xE9cente.",
+    warningNotRecent: "Attention : Vous \xEAtes sur le point de modifier une version qui n'est pas la plus r\xE9cente (la plus r\xE9cente est du {0}). Voulez-vous continuer ?",
     original: "Original",
     originalBase: "Original (Base)",
     proceed: "Continuer",
@@ -498,9 +492,9 @@ Lors de l'exportation ou de la modification d'un PDF dans Samsung Notes, si le n
 En activant l'option **"Correction des noms longs Samsung Notes"** dans les param\xE8tres du plugin (visible en mode Samsung), PDF Versioning comparera les 50 premiers caract\xE8res des fichiers, garantissant la d\xE9tection exacte des variantes aux noms tr\xE8s longs.`
   },
   de: {
-    opening: "\xD6ffnen mit PDF versioning...\n\n---\n\n### \u{1F4F1} Note sur l'int\xE9gration Samsung Notes et les noms de fichiers longs\nLors de l'exportation ou de la modification d'un PDF dans Samsung Notes, si le nom d'origine d\xE9passe 50 caract\xE8res, Samsung Notes le tronque automatiquement \xE0 50 caract\xE8res avant d'ajouter l'horodatage (ex. `_260722_114213`).\nEn activant l'option **\"Correction des noms longs Samsung Notes\"** dans les param\xE8tres du plugin (visible en mode Samsung), PDF Versioning comparera les 50 premiers caract\xE8res des fichiers, garantissant la d\xE9tection exacte des variantes aux noms tr\xE8s longs.",
+    opening: "\xD6ffnen mit PDF versioning...",
     errorOpeningPdf: "Fehler beim \xD6ffnen der PDF: ",
-    warningNotRecent: "Sie bearbeiten eine Version, die nicht die aktuellste ist.",
+    warningNotRecent: "Achtung: Sie bearbeiten eine Version, die nicht die aktuellste ist (die aktuellste ist vom {0}). M\xF6chten Sie trotzdem fortfahren?",
     original: "Original",
     originalBase: "Original (Basis)",
     proceed: "Fortfahren",
@@ -651,9 +645,9 @@ Beim Exportieren oder Bearbeiten einer PDF-Datei in Samsung Notes k\xFCrzt Samsu
 Durch Aktivieren der Option **"Korrektur f\xFCr lange Dateinamen in Samsung Notes"** in den Einstellungen (sichtbar im Samsung-Stil) vergleicht PDF Versioning nur die ersten 50 "sicheren" Zeichen der Dateinamen, sodass auch Varianten mit sehr langen Namen korrekt erkannt und gruppiert werden.`
   },
   es: {
-    opening: 'Abriendo con PDF versioning...\n\n---\n\n### \u{1F4F1} Hinweis zur Integration von Samsung Notes bei langen Dateinamen\nBeim Exportieren oder Bearbeiten einer PDF-Datei in Samsung Notes k\xFCrzt Samsung Notes Dateinamen automatisch auf 50 Zeichen, wenn der Originalname 50 Zeichen \xFCberschreitet, bevor der Zeitstempel (z. B. `_260722_114213`) angeh\xE4ngt wird.\nDurch Aktivieren der Option **"Korrektur f\xFCr lange Dateinamen in Samsung Notes"** in den Einstellungen (sichtbar im Samsung-Stil) vergleicht PDF Versioning nur die ersten 50 "sicheren" Zeichen der Dateinamen, sodass auch Varianten mit sehr langen Namen korrekt erkannt und gruppiert werden.',
+    opening: "Abriendo con PDF versioning...",
     errorOpeningPdf: "Error al abrir el PDF: ",
-    warningNotRecent: "Est\xE1s a punto de modificar una versi\xF3n que no es la m\xE1s reciente.",
+    warningNotRecent: "Advertencia: Est\xE1s a punto de modificar una versi\xF3n que no es la m\xE1s reciente (la m\xE1s reciente es del {0}). \xBFQuieres continuar?",
     original: "Original",
     originalBase: "Original (Base)",
     proceed: "Continuar",
@@ -804,9 +798,9 @@ Al exportar o editar un PDF en Samsung Notes, si el nombre original supera los 5
 Al activar la opci\xF3n **"Correcci\xF3n de nombres largos de Samsung Notes"** en la configuraci\xF3n del complemento (visible en estilo Samsung), PDF Versioning comparar\xE1 los primeros 50 caracteres "seguros" de los archivos, garantizando que las variantes con nombres largos se detecten y agrupen correctamente.`
   },
   pl: {
-    opening: 'Otwieranie z PDF versioning...\n\n---\n\n### \u{1F4F1} Nota de integraci\xF3n con Samsung Notes y nombres de archivo largos\nAl exportar o editar un PDF en Samsung Notes, si el nombre original supera los 50 caracteres, Samsung Notes lo trunca autom\xE1ticamente a 50 caracteres antes de a\xF1adir la marca de tiempo (ej. `_260722_114213`).\nAl activar la opci\xF3n **"Correcci\xF3n de nombres largos de Samsung Notes"** en la configuraci\xF3n del complemento (visible en estilo Samsung), PDF Versioning comparar\xE1 los primeros 50 caracteres "seguros" de los archivos, garantizando que las variantes con nombres largos se detecten y agrupen correctamente.',
+    opening: "Otwieranie za pomoc\u0105 PDF versioning...",
     errorOpeningPdf: "B\u0142\u0105d podczas otwierania PDF: ",
-    warningNotRecent: "Edytujesz wersj\u0119, kt\xF3ra nie jest najnowsza.",
+    warningNotRecent: "Ostrze\u017Cenie: Pr\xF3bujesz edytowa\u0107 wersj\u0119, kt\xF3ra nie jest najnowsza (najnowsza pochodzi z {0}). Czy chcesz kontynuowa\u0107?",
     original: "Orygina\u0142",
     originalBase: "Orygina\u0142 (Baza)",
     proceed: "Kontynuuj",
@@ -959,7 +953,7 @@ W\u0142\u0105czaj\u0105c opcj\u0119 **"Poprawka d\u0142ugich nazw plik\xF3w Sams
   zh: {
     opening: "\u6B63\u5728\u4F7F\u7528 PDF versioning \u6253\u5F00...",
     errorOpeningPdf: "\u6253\u5F00 PDF \u65F6\u51FA\u9519\uFF1A ",
-    warningNotRecent: "\u60A8\u6B63\u5728\u7F16\u8F91\u7684\u4E0D\u662F\u6700\u65B0\u7248\u672C\u3002",
+    warningNotRecent: "\u8B66\u544A\uFF1A\u60A8\u5373\u5C06\u7F16\u8F91\u7684\u4E0D\u662F\u6700\u65B0\u7248\u672C\uFF08\u6700\u65B0\u7248\u672C\u6765\u81EA {0}\uFF09\u3002\u60A8\u4ECD\u8981\u7EE7\u7EED\u5417\uFF1F",
     original: "\u539F\u59CB\u7248\u672C",
     originalBase: "\u539F\u59CB\u7248\u672C\uFF08\u57FA\u7840\uFF09",
     proceed: "\u7EE7\u7EED",
@@ -1112,7 +1106,7 @@ W\u0142\u0105czaj\u0105c opcj\u0119 **"Poprawka d\u0142ugich nazw plik\xF3w Sams
   ja: {
     opening: "PDF versioning \u3067\u958B\u3044\u3066\u3044\u307E\u3059...",
     errorOpeningPdf: "PDF \u306E\u30AA\u30FC\u30D7\u30F3\u30A8\u30E9\u30FC\uFF1A ",
-    warningNotRecent: "\u6700\u65B0\u3067\u306F\u306A\u3044\u30D0\u30FC\u30B8\u30E7\u30F3\u3092\u7DE8\u96C6\u3057\u3088\u3046\u3068\u3057\u3066\u3044\u307E\u3059\u3002",
+    warningNotRecent: "\u8B66\u544A: \u6700\u65B0\u3067\u306F\u306A\u3044\u30D0\u30FC\u30B8\u30E7\u30F3\u3092\u7DE8\u96C6\u3057\u3088\u3046\u3068\u3057\u3066\u3044\u307E\u3059 (\u6700\u65B0\u306F {0} \u306E\u3082\u306E\u3067\u3059)\u3002\u7D9A\u884C\u3057\u307E\u3059\u304B\uFF1F",
     original: "\u30AA\u30EA\u30B8\u30CA\u30EB",
     originalBase: "\u30AA\u30EA\u30B8\u30CA\u30EB\uFF08\u30D9\u30FC\u30B9\uFF09",
     proceed: "\u7D9A\u884C",
@@ -1263,9 +1257,9 @@ Samsung Notes\u3067PDF\u3092\u30A8\u30AF\u30B9\u30DD\u30FC\u30C8\u307E\u305F\u30
 \u30D7\u30E9\u30B0\u30A4\u30F3\u8A2D\u5B9A\u3067 **\u300CSamsung Notes \u9577\u3044\u30D5\u30A1\u30A4\u30EB\u540D\u306E\u4FEE\u6B63\u300D** \u30AA\u30D7\u30B7\u30E7\u30F3\uFF08\u30B9\u30BF\u30A4\u30EB\u304CSamsung\u306E\u5834\u5408\u306B\u8868\u793A\uFF09\u3092\u6709\u52B9\u306B\u3059\u308B\u3068\u3001PDF Versioning\u306F\u30D5\u30A1\u30A4\u30EB\u540D\u306E\u6700\u521D\u306E50\u6587\u5B57\u306E\u300C\u5B89\u5168\u306A\u300D\u6587\u5B57\u306E\u307F\u3092\u6BD4\u8F03\u3057\u3001\u9577\u3044\u540D\u524D\u306E\u30D0\u30EA\u30A2\u30F3\u30C8\u3092\u6B63\u3057\u304F\u8A8D\u8B58\u3057\u3066\u30B0\u30EB\u30FC\u30D7\u5316\u3057\u307E\u3059\u3002`
   },
   ru: {
-    opening: "\u041E\u0442\u043A\u0440\u044B\u0442\u0438\u0435 \u0447\u0435\u0440\u0435\u0437 PDF versioning...",
+    opening: "\u041E\u0442\u043A\u0440\u044B\u0442\u0438\u0435 \u0441 \u043F\u043E\u043C\u043E\u0449\u044C\u044E PDF versioning...",
     errorOpeningPdf: "\u041E\u0448\u0438\u0431\u043A\u0430 \u043E\u0442\u043A\u0440\u044B\u0442\u0438\u044F PDF: ",
-    warningNotRecent: "\u0412\u044B \u0441\u043E\u0431\u0438\u0440\u0430\u0435\u0442\u0435\u0441\u044C \u0440\u0435\u0434\u0430\u043A\u0442\u0438\u0440\u043E\u0432\u0430\u0442\u044C \u0432\u0435\u0440\u0441\u0438\u044E, \u043A\u043E\u0442\u043E\u0440\u0430\u044F \u043D\u0435 \u044F\u0432\u043B\u044F\u0435\u0442\u0441\u044F \u043F\u043E\u0441\u043B\u0435\u0434\u043D\u0435\u0439.",
+    warningNotRecent: "\u041F\u0440\u0435\u0434\u0443\u043F\u0440\u0435\u0436\u0434\u0435\u043D\u0438\u0435: \u0412\u044B \u0441\u043E\u0431\u0438\u0440\u0430\u0435\u0442\u0435\u0441\u044C \u0440\u0435\u0434\u0430\u043A\u0442\u0438\u0440\u043E\u0432\u0430\u0442\u044C \u0432\u0435\u0440\u0441\u0438\u044E, \u043A\u043E\u0442\u043E\u0440\u0430\u044F \u043D\u0435 \u044F\u0432\u043B\u044F\u0435\u0442\u0441\u044F \u043F\u043E\u0441\u043B\u0435\u0434\u043D\u0435\u0439 (\u043F\u043E\u0441\u043B\u0435\u0434\u043D\u044F\u044F \u043E\u0442 {0}). \u0412\u044B \u0432\u0441\u0435 \u0440\u0430\u0432\u043D\u043E \u0445\u043E\u0442\u0438\u0442\u0435 \u043F\u0440\u043E\u0434\u043E\u043B\u0436\u0438\u0442\u044C?",
     original: "\u041E\u0440\u0438\u0433\u0438\u043D\u0430\u043B",
     originalBase: "\u041E\u0440\u0438\u0433\u0438\u043D\u0430\u043B (\u0411\u0430\u0437\u0430)",
     proceed: "\u041F\u0440\u043E\u0434\u043E\u043B\u0436\u0438\u0442\u044C",
@@ -1418,7 +1412,7 @@ Samsung Notes\u3067PDF\u3092\u30A8\u30AF\u30B9\u30DD\u30FC\u30C8\u307E\u305F\u30
   pt: {
     opening: "Abrindo com PDF versioning...",
     errorOpeningPdf: "Erro ao abrir PDF: ",
-    warningNotRecent: "Voc\xEA est\xE1 prestes a editar uma vers\xE3o que n\xE3o \xE9 a mais recente.",
+    warningNotRecent: "Aviso: Voc\xEA est\xE1 prestes a editar uma vers\xE3o que n\xE3o \xE9 a mais recente (a mais recente \xE9 de {0}). Deseja continuar mesmo assim?",
     original: "Original",
     originalBase: "Original (Base)",
     proceed: "Continuar",
@@ -1796,9 +1790,11 @@ var PDFVersioningPlugin = class extends import_obsidian.Plugin {
         }
       };
       if (newest && newest.path !== file.path) {
+        let newestLabel = "";
+        newestLabel = this.formatVariantLabel(newest);
         new ConfirmationModal(
           this.app,
-          this.t("warningNotRecent"),
+          this.t("warningNotRecent", newestLabel),
           () => {
             openApp();
           },
