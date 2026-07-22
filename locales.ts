@@ -14,7 +14,7 @@ export const locales: Record<string, Record<LocaleKey, string>> = {
     en: {
         opening: "Opening with PDF versioning...",
         errorOpeningPdf: "Error opening PDF: ",
-        warningNotRecent: "Warning: You are about to edit a version that is not the most recent (the most recent is from {0}). Do you want to proceed anyway?",
+        warningNotRecent: "You are about to edit a version that is not the most recent.",
         original: "Original",
         originalBase: "Original (Base)",
         proceed: "Proceed",
@@ -167,7 +167,7 @@ By enabling the **"Samsung Notes Long Filename Fix"** option in the plugin setti
     it: {
         opening: "Apertura con PDF versioning...\n\n---\n\n### 📱 Samsung Notes Long Filename Integration Note\nWhen exporting or editing a PDF in Samsung Notes, if the original filename exceeds 50 characters, Samsung Notes automatically truncates it to 50 characters before appending the timestamp (e.g. `_260722_114213`).\nBy enabling the **\"Samsung Notes Long Filename Fix\"** option in the plugin settings (visible when style is Samsung), PDF Versioning will compare the first 50 \"safe\" characters of filenames, ensuring that variants with long names are properly detected and grouped.",
         errorOpeningPdf: "Errore nell'apertura del PDF: ",
-        warningNotRecent: "Attenzione: Stai per modificare una versione che non è la più recente (la più recente è del {0}). Vuoi procedere comunque?",
+        warningNotRecent: "Stai per modificare una versione che non è la più recente.",
         original: "Originale",
         originalBase: "Originale (Base)",
         proceed: "Procedi",
@@ -320,7 +320,7 @@ Abilitando l'opzione **"Supporto nomi lunghi Samsung Notes"** nelle impostazioni
     fr: {
         opening: "Ouverture avec PDF versioning...\n\n---\n\n### 📱 Note sull'integrazione con Samsung Notes e nomi file lunghi\nQuando esportate o modificate un PDF in Samsung Notes, se il nome del file originale supera i 50 caratteri, Samsung Notes lo troncherà automaticamente a 50 caratteri prima di aggiungere la data e l'ora (es. `_260722_114213`).\nAbilitando l'opzione **\"Supporto nomi lunghi Samsung Notes\"** nelle impostazioni del plugin (visibile quando lo stile è Samsung), PDF Versioning confronterà i primi 50 caratteri \"sicuri\" dei file, garantendo che anche le varianti dai nomi molto lunghi vengano riconosciute e raggruppate correttamente.",
         errorOpeningPdf: "Erreur lors de l'ouverture du PDF : ",
-        warningNotRecent: "Attention : Vous êtes sur le point de modifier une version qui n'est pas la plus récente (la plus récente est du {0}). Voulez-vous continuer ?",
+        warningNotRecent: "Vous êtes sur le point de modifier une version qui n'est pas la plus récente.",
         original: "Original",
         originalBase: "Original (Base)",
         proceed: "Continuer",
@@ -473,7 +473,7 @@ En activant l'option **"Correction des noms longs Samsung Notes"** dans les para
     de: {
         opening: "Öffnen mit PDF versioning...\n\n---\n\n### 📱 Note sur l'intégration Samsung Notes et les noms de fichiers longs\nLors de l'exportation ou de la modification d'un PDF dans Samsung Notes, si le nom d'origine dépasse 50 caractères, Samsung Notes le tronque automatiquement à 50 caractères avant d'ajouter l'horodatage (ex. `_260722_114213`).\nEn activant l'option **\"Correction des noms longs Samsung Notes\"** dans les paramètres du plugin (visible en mode Samsung), PDF Versioning comparera les 50 premiers caractères des fichiers, garantissant la détection exacte des variantes aux noms très longs.",
         errorOpeningPdf: "Fehler beim Öffnen der PDF: ",
-        warningNotRecent: "Achtung: Sie bearbeiten eine Version, die nicht die aktuellste ist (die aktuellste ist vom {0}). Möchten Sie trotzdem fortfahren?",
+        warningNotRecent: "Sie bearbeiten eine Version, die nicht die aktuellste ist.",
         original: "Original",
         originalBase: "Original (Basis)",
         proceed: "Fortfahren",
@@ -626,7 +626,7 @@ Durch Aktivieren der Option **"Korrektur für lange Dateinamen in Samsung Notes"
     es: {
         opening: "Abriendo con PDF versioning...\n\n---\n\n### 📱 Hinweis zur Integration von Samsung Notes bei langen Dateinamen\nBeim Exportieren oder Bearbeiten einer PDF-Datei in Samsung Notes kürzt Samsung Notes Dateinamen automatisch auf 50 Zeichen, wenn der Originalname 50 Zeichen überschreitet, bevor der Zeitstempel (z. B. `_260722_114213`) angehängt wird.\nDurch Aktivieren der Option **\"Korrektur für lange Dateinamen in Samsung Notes\"** in den Einstellungen (sichtbar im Samsung-Stil) vergleicht PDF Versioning nur die ersten 50 \"sicheren\" Zeichen der Dateinamen, sodass auch Varianten mit sehr langen Namen korrekt erkannt und gruppiert werden.",
         errorOpeningPdf: "Error al abrir el PDF: ",
-        warningNotRecent: "Advertencia: Estás a punto de modificar una versión que no es la más reciente (la más reciente es del {0}). ¿Quieres continuar?",
+        warningNotRecent: "Estás a punto de modificar una versión que no es la más reciente.",
         original: "Original",
         originalBase: "Original (Base)",
         proceed: "Continuar",
@@ -779,7 +779,7 @@ Al activar la opción **"Corrección de nombres largos de Samsung Notes"** en la
     pl: {
         opening: "Otwieranie z PDF versioning...\n\n---\n\n### 📱 Nota de integración con Samsung Notes y nombres de archivo largos\nAl exportar o editar un PDF en Samsung Notes, si el nombre original supera los 50 caracteres, Samsung Notes lo trunca automáticamente a 50 caracteres antes de añadir la marca de tiempo (ej. `_260722_114213`).\nAl activar la opción **\"Corrección de nombres largos de Samsung Notes\"** en la configuración del complemento (visible en estilo Samsung), PDF Versioning comparará los primeros 50 caracteres \"seguros\" de los archivos, garantizando que las variantes con nombres largos se detecten y agrupen correctamente.",
         errorOpeningPdf: "Błąd podczas otwierania PDF: ",
-        warningNotRecent: "Ostrzeżenie: Próbujesz edytować wersję, która nie jest najnowsza (najnowsza jest z {0}). Czy chcesz kontynuować?",
+        warningNotRecent: "Edytujesz wersję, która nie jest najnowsza.",
         original: "Oryginał",
         originalBase: "Oryginał (Baza)",
         proceed: "Kontynuuj",
@@ -932,7 +932,7 @@ Włączając opcję **"Poprawka długich nazw plików Samsung Notes"** w ustawie
     zh: {
         opening: "正在使用 PDF versioning 打开...",
         errorOpeningPdf: "打开 PDF 时出错： ",
-        warningNotRecent: "警告：您将要编辑的版本不是最新的（最新版本来自 {0}）。您确定要继续吗？",
+        warningNotRecent: "您正在编辑的不是最新版本。",
         original: "原始版本",
         originalBase: "原始版本（基础）",
         proceed: "继续",
@@ -1085,7 +1085,7 @@ Włączając opcję **"Poprawka długich nazw plików Samsung Notes"** w ustawie
     ja: {
         opening: "PDF versioning で開いています...",
         errorOpeningPdf: "PDF のオープンエラー： ",
-        warningNotRecent: "警告：最新ではないバージョンを編集しようとしています（最新は {0} です）。続行しますか？",
+        warningNotRecent: "最新ではないバージョンを編集しようとしています。",
         original: "オリジナル",
         originalBase: "オリジナル（ベース）",
         proceed: "続行",
@@ -1238,7 +1238,7 @@ Samsung NotesでPDFをエクスポートまたは編集する際、元のファ�
     ru: {
         opening: "Открытие через PDF versioning...",
         errorOpeningPdf: "Ошибка открытия PDF: ",
-        warningNotRecent: "Внимание: Вы собираетесь редактировать не самую свежую версию (самая свежая от {0}). Хотите продолжить?",
+        warningNotRecent: "Вы собираетесь редактировать версию, которая не является последней.",
         original: "Оригинал",
         originalBase: "Оригинал (База)",
         proceed: "Продолжить",
@@ -1391,7 +1391,7 @@ Samsung NotesでPDFをエクスポートまたは編集する際、元のファ�
     pt: {
         opening: "Abrindo com PDF versioning...",
         errorOpeningPdf: "Erro ao abrir PDF: ",
-        warningNotRecent: "Aviso: Você está prestes a editar uma versão que não é a mais recente (a mais recente é de {0}). Deseja continuar?",
+        warningNotRecent: "Você está prestes a editar uma versão que não é a mais recente.",
         original: "Original",
         originalBase: "Original (Base)",
         proceed: "Continuar",
